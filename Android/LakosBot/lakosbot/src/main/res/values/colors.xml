@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#35454d</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorCalibrate">#30AAF0</color>
+    <color name="colorActivateButtonRed">#dd0e0e</color>
+    <color name="colorActivateButtonGreen">#00ff95</color>
+    <color name="colorCalibrateOFF">#808080</color>
 </resources>

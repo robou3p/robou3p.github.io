@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -11,6 +12,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.ViewCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +26,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
+import android.graphics.Color;
 
 public class LakosBot extends Activity implements SensorEventListener {
 	
@@ -81,8 +85,7 @@ public class LakosBot extends Activity implements SensorEventListener {
 	private TextView mTitle;
 
 	private ListView mMessageView;
-	private Button mStartButton;
-	private Button mStopButton;
+	private Button mActivateButton;
 	private Button mCalibrateButton;
 
 	// Sensor manager (for accelerometers)
@@ -113,12 +116,16 @@ public class LakosBot extends Activity implements SensorEventListener {
 		super.onCreate(savedInstanceState);
 
 		// Set up the window layout
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.lakosbot);
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
+				R.layout.custom_title);
 
 		// Set up the custom title
 		mTitle = (TextView) findViewById(R.id.title_left_text);
-		mTitle.setText(R.string.app_name);
+		mTitle.setText("LakosBot");
 		mTitle = (TextView) findViewById(R.id.title_right_text);
+
 
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -173,68 +180,80 @@ public class LakosBot extends Activity implements SensorEventListener {
 		mMessageView.setAdapter(mMessageArrayAdapter);
 		mMessageArrayAdapter.add("Welcome!");
 
-		mStartButton = (Button) findViewById(R.id.buttonStart);
-		mStartButton.setOnClickListener(new OnClickListener() {
+		mActivateButton = (Button) findViewById(R.id.buttonActivate);
+		mActivateButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mStarted = true;
-				timerHandler.postDelayed(timerRunnable, 0);
-			}
-		});
-
-		mStopButton = (Button) findViewById(R.id.buttonStop);
-		mStopButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mStarted = false;
-				byte[] message = new byte[] { 76, 1, 0, 82, 1, 0 };
-				sendMessage(message);
-				timerHandler.removeCallbacks(timerRunnable);
+				if (!mStarted) {
+					mActivateButton.setText("STOP");
+					ViewCompat.setBackgroundTintList(v, ColorStateList.valueOf(getResources().getColor(R.color.colorActivateButtonRed)));
+					ViewCompat.setBackgroundTintList(findViewById(R.id.buttonCalibrate), ColorStateList.valueOf(getResources().getColor(R.color.colorCalibrateOFF)));
+					//v.setBackgroundTintList(ColorStateList.valueOf(R.color.colorActivateButtonRed));
+					//v.setBackgroundColor(R.color.colorActivateButtonRed);
+					//v.setBackgroundColor(Color.parseColor("#dd0e0e"));
+					//v.getBackground().setColorFilter(Color.parseColor("#dd0e0e"));
+					//mActivateButton.setBackgroundColor(0xdd0e0e);
+					mStarted = true;
+					timerHandler.postDelayed(timerRunnable, 0);
+				} else {
+					mActivateButton.setText("START");
+					ViewCompat.setBackgroundTintList(v, ColorStateList.valueOf(getResources().getColor(R.color.colorActivateButtonGreen)));
+					ViewCompat.setBackgroundTintList(findViewById(R.id.buttonCalibrate), ColorStateList.valueOf(getResources().getColor(R.color.colorCalibrate)));
+					//v.setBackgroundTintList(ColorStateList.valueOf(R.color.colorActivateButtonGreen));
+					//v.setBackgroundColor(R.color.colorActivateButtonGreen);
+					//v.setBackgroundColor(Color.parseColor("#00ff95"));
+					//mActivateButton.setBackgroundColor(0x00ff95);
+					mStarted = false;
+					byte[] message = new byte[] { 76, 1, 0, 82, 1, 0 };
+					sendMessage(message);
+					timerHandler.removeCallbacks(timerRunnable);
+				}
 			}
 		});
 
 		mCalibrateButton = (Button) findViewById(R.id.buttonCalibrate);
 		mCalibrateButton.setOnClickListener(new OnClickListener() {
-
 			@Override
-			public void onClick(View v) {
-				switch (mCalibrationState) {
-				case CALIBRATION_FINISHED:
-					mMessageArrayAdapter
-							.add("Position NEUTRAL and press Calibrate.");
-					mCalibrationState = CALIBRATION_NEUTRAL;
-					break;
-				case CALIBRATION_NEUTRAL:
-					neutralVector.setValue(currentVector);
-					mMessageArrayAdapter
-							.add("Position FORWARD and press Calibrate.");
-					mCalibrationState = CALIBRATION_FORWARD;
-					break;
-				case CALIBRATION_FORWARD:
-					forwardVector.setValue(currentVector
-							.subtract(neutralVector));
-					mMessageArrayAdapter
-							.add("Position REVERSE and press Calibrate.");
-					mCalibrationState = CALIBRATION_REVERSE;
-					break;
-				case CALIBRATION_REVERSE:
-					reverseVector.setValue(currentVector
-							.subtract(neutralVector));
-					mMessageArrayAdapter
-							.add("Position LEFT and press Calibrate.");
-					mCalibrationState = CALIBRATION_LEFT;
-					break;
-				case CALIBRATION_LEFT:
-					leftVector.setValue(currentVector.subtract(neutralVector));
-					mMessageArrayAdapter
-							.add("Position RIGHT and press Calibrate.");
-					mCalibrationState = CALIBRATION_RIGHT;
-					break;
-				case CALIBRATION_RIGHT:
-					rightVector.setValue(currentVector.subtract(neutralVector));
-					mMessageArrayAdapter.add("Calibration finished.");
-					mCalibrationState = CALIBRATION_FINISHED;
-					break;
+			public void onClick (View v){
+				if (!mStarted) {
+					switch (mCalibrationState) {
+						case CALIBRATION_FINISHED:
+							mMessageArrayAdapter
+									.add("Position NEUTRAL and press Calibrate.");
+							mCalibrationState = CALIBRATION_NEUTRAL;
+							break;
+						case CALIBRATION_NEUTRAL:
+							neutralVector.setValue(currentVector);
+							mMessageArrayAdapter
+									.add("Position FORWARD and press Calibrate.");
+							mCalibrationState = CALIBRATION_FORWARD;
+							break;
+						case CALIBRATION_FORWARD:
+							forwardVector.setValue(currentVector
+									.subtract(neutralVector));
+							mMessageArrayAdapter
+									.add("Position REVERSE and press Calibrate.");
+							mCalibrationState = CALIBRATION_REVERSE;
+							break;
+						case CALIBRATION_REVERSE:
+							reverseVector.setValue(currentVector
+									.subtract(neutralVector));
+							mMessageArrayAdapter
+									.add("Position LEFT and press Calibrate.");
+							mCalibrationState = CALIBRATION_LEFT;
+							break;
+						case CALIBRATION_LEFT:
+							leftVector.setValue(currentVector.subtract(neutralVector));
+							mMessageArrayAdapter
+									.add("Position RIGHT and press Calibrate.");
+							mCalibrationState = CALIBRATION_RIGHT;
+							break;
+						case CALIBRATION_RIGHT:
+							rightVector.setValue(currentVector.subtract(neutralVector));
+							mMessageArrayAdapter.add("Calibration finished.");
+							mCalibrationState = CALIBRATION_FINISHED;
+							break;
+					}
 				}
 			}
 		});
