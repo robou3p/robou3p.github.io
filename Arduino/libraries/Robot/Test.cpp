@@ -5,6 +5,7 @@
 */
 
 #include "Arduino.h"
+#include "Robot.h"
 #include "Test.h"
 #include "Motor.h"
 #include "MPU9250.h"
