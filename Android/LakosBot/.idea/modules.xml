@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:\Android projekti\LakosBot\app\BTRemote.iml" filepath="D:\Android projekti\LakosBot\app\BTRemote.iml" />
       <module fileurl="file://$PROJECT_DIR$/LakosBot.iml" filepath="$PROJECT_DIR$/LakosBot.iml" />
-      <module fileurl="file://D:\Android projekti\LakosBot\lakosbot\app.iml" filepath="D:\Android projekti\LakosBot\lakosbot\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lakosbot/lakosbot.iml" filepath="$PROJECT_DIR$/lakosbot/lakosbot.iml" />
     </modules>
   </component>
