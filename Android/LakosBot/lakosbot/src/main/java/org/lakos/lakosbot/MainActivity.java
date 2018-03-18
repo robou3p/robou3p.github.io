@@ -23,11 +23,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 import butterknife.BindColor;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
     // Bound views
     @BindView(R.id.buttonActivate) AppCompatButton buttonActivate;
+    @BindView(R.id.textViewTest) TextView textViewTest;
 
     // Bound resources
     @BindColor(R.color.colorActivateButtonGreen) int colorActivateButtonGreen;
@@ -95,30 +98,31 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         public void run() {
             if(sensorListener == null) {
                 Log.w(TAG, "SensorListener is null!");
+                robotControlActive = false;
+                initUI();
                 return;
             }
-            if(btConnectionThread == null) {
-                Log.w(TAG, "BluetoothConnectionThread is null!");
-                return;
-            }
-            if(robotControlActive) {
-                float[] speeds = sensorListener.getSpeeds();
 
-                // dirX=1 -> forward
-                // dirX=0 -> backward
+            byte[] data = sensorListener.getDirsAndSpeeds();
+
+            textViewTest.setText(String.format(Locale.ENGLISH, "L:%d (%d) \nD:%d (%d)", data[1], data[0], data[3], data[2]));
+
+            if(btConnectionThread != null && robotControlActive) {
 
                 byte msg[] = {
                         'L',
-                        (byte) (speeds[0] >= 0 ? 1 : 0), // dirL
-                        (byte) speeds[0],
+                        data[0], // dirL
+                        data[1], // speedL
                         'R',
-                        (byte) (speeds[1] >= 0 ? 1 : 0), // dirR
-                        (byte) speeds[1],
+                        data[2], // dirR
+                        data[3], // speedR
                 };
 
                 Log.i(TAG, "Sending message: " + Arrays.toString(msg));
 
                 btConnectionThread.write(msg);
+            } else {
+                Log.w(TAG, "BluetoothConnectionThread is null!");
             }
             messageSenderHandler.postDelayed(messageSenderRunnable, 100);
         }
@@ -180,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         f.addAction(BTC_START);
         LocalBroadcastManager.getInstance(this).registerReceiver(btStateBroadcastReceiver, f);
         initUI();
+        SensorConfigurationLoader.loadCalibration(this, sensorListener);
     }
 
     @Override
@@ -398,7 +403,9 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                 return;
             }
         }
-        Log.d(TAG, "Calibration vectors applied to sensor listener!");
         sensorListener.setVectors(vectors[0], vectors[1], vectors[2], vectors[3], vectors[4]);
+        Log.d(TAG, "Calibration vectors applied to sensor listener!");
+
+        SensorConfigurationLoader.saveCalibration(this, vectors);
     }
 }

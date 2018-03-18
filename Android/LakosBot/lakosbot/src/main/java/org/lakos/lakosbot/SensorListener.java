@@ -3,7 +3,6 @@ package org.lakos.lakosbot;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.support.annotation.NonNull;
 
 /**
  * Created by martin on 14.3.2018.
@@ -11,21 +10,31 @@ import android.support.annotation.NonNull;
 
 public class SensorListener implements SensorEventListener {
 
+    private static final int MAX_SPEED_VALUE = 255;
+
+    public SensorListener() {
+        currentVector = new Vector();
+        neutralVector = new Vector();
+        forwardVector = new Vector();
+        backwardVector = new Vector();
+        leftVector = new Vector();
+        rightVector = new Vector();
+    }
+
     // Control magic: vectors
-    private Vector currentVector = new Vector(0, 0, 0);
-    private Vector neutralVector = new Vector(0, 0, 0);
-    private Vector forwardVector = new Vector(0, 0, 0);
-    private Vector backwardVector = new Vector(0, 0, 0);
-    private Vector leftVector = new Vector(0, 0, 0);
-    private Vector rightVector = new Vector(0, 0, 0);
+    private Vector currentVector, neutralVector, forwardVector, backwardVector, leftVector, rightVector;
 
-    private byte dirL = 0;
-    private byte dirR = 0;
-    private float speedL = 0;
-    private float speedR = 0;
+    private byte availDirL, availDirR, availSpeedL, availSpeedR;
 
-    public float[] getSpeeds() {
-        return new float[]{speedL, speedR};
+    /**
+     * Returns current directions and speeds according to sensor readings.<br/>
+     * Direction parameters can be:
+     * <ul><li>1, meaning forward movement</li><li>0, meaning backward movement</li></ul>
+     * Speed parameters can take any value between 0 and 255 (one byte)
+     * @return byte array containing {dirL, speedL, dirR, speedR}
+     */
+    public byte[] getDirsAndSpeeds() {
+        return new byte[]{availDirL, availSpeedL, availDirR, availSpeedR};
     }
 
     public Vector getCurrentVector() {
@@ -80,20 +89,18 @@ public class SensorListener implements SensorEventListener {
             if (steer < 0)
                 steerValue *= -1;
 
-            speedR = speedValue - steerValue/10 - steerValue * speedValue / 100;
-            if (speedR > 255)
-                speedR = 255;
-            else if (speedR < -255)
-                speedR = -255;
+            float speedR = speedValue - steerValue/10 - steerValue * speedValue / 100;
+            float speedL = speedValue + steerValue/10 + steerValue * speedValue / 100;
 
-            speedL = speedValue + steerValue/10 + steerValue * speedValue / 100;
-            if (speedL > 255)
-                speedL = 255;
-            else if (speedL < -255)
-                speedL = -255;
+            // Limit speed value between +MAX and -MAX
+            speedR = Math.max(Math.min(speedR, MAX_SPEED_VALUE), -MAX_SPEED_VALUE);
+            speedL = Math.max(Math.min(speedL, MAX_SPEED_VALUE), -MAX_SPEED_VALUE);
 
-            dirL = speedL >= 0 ? (byte) 1 : (byte) 0;
-            dirR = speedR >= 0 ? (byte) 1 : (byte) 0;
+            availDirL = speedL >= 0 ? (byte) 1 : (byte) 0;
+            availDirR = speedR >= 0 ? (byte) 1 : (byte) 0;
+
+            availSpeedL = (byte) Math.abs(Math.round(speedL));
+            availSpeedR = (byte) Math.abs(Math.round(speedR));
             /*sendMessage(new byte[] { 76, (byte) dirL,
                     (byte) ((int) Math.abs(speedL)), 82, (byte) dirR,
                     (byte) ((int) Math.abs(speedR)) });*/
