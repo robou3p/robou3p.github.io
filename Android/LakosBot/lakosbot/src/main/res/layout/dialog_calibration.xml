@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dialog_margin" >
+
+    <Button
+        android:id="@+id/buttonCalibrationDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next" />
+
+    <TextView
+        android:id="@+id/textViewCalibrationDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="n/a"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:gravity="center"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarCalibrationDialog"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="5"
+        android:progress="0" />
+</LinearLayout>

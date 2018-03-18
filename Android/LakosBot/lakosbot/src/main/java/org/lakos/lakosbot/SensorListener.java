@@ -3,7 +3,7 @@ package org.lakos.lakosbot;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.widget.ArrayAdapter;
+import android.support.annotation.NonNull;
 
 /**
  * Created by martin on 14.3.2018.
@@ -12,12 +12,12 @@ import android.widget.ArrayAdapter;
 public class SensorListener implements SensorEventListener {
 
     // Control magic: vectors
-    Vector currentVector = new Vector(0, 0, 0);
-    Vector neutralVector = new Vector(0, 0, 0);
-    Vector forwardVector = new Vector(0, 0, 0);
-    Vector reverseVector = new Vector(0, 0, 0);
-    Vector leftVector = new Vector(0, 0, 0);
-    Vector rightVector = new Vector(0, 0, 0);
+    private Vector currentVector = new Vector(0, 0, 0);
+    private Vector neutralVector = new Vector(0, 0, 0);
+    private Vector forwardVector = new Vector(0, 0, 0);
+    private Vector backwardVector = new Vector(0, 0, 0);
+    private Vector leftVector = new Vector(0, 0, 0);
+    private Vector rightVector = new Vector(0, 0, 0);
 
     private byte dirL = 0;
     private byte dirR = 0;
@@ -26,6 +26,22 @@ public class SensorListener implements SensorEventListener {
 
     public float[] getSpeeds() {
         return new float[]{speedL, speedR};
+    }
+
+    public Vector getCurrentVector() {
+        return currentVector;
+    }
+
+    public Vector getNeutralVector() {
+        return neutralVector;
+    }
+
+    public void setVectors(Vector neutral, Vector forward, Vector backward, Vector left, Vector right) {
+        neutralVector.setValue(neutral);
+        forwardVector.setValue(forward);
+        backwardVector.setValue(backward);
+        leftVector.setValue(left);
+        rightVector.setValue(right);
     }
 
     @Override
@@ -50,7 +66,7 @@ public class SensorListener implements SensorEventListener {
             currentVector.setValue(x, y, z);
 
             float forward = currentVector.getComponent(forwardVector);
-            float reverse = currentVector.getComponent(reverseVector);
+            float reverse = currentVector.getComponent(backwardVector);
             float left = currentVector.getComponent(leftVector);
             float right = currentVector.getComponent(rightVector);
 
@@ -96,5 +112,4 @@ public class SensorListener implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
-
 }

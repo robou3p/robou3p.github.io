@@ -1,40 +1,45 @@
 package org.lakos.lakosbot;
 
 public class Vector {
-	float x;
 
-	public float getX() {
+	float x;
+	float y;
+	float z;
+
+	public Vector(float x, float y, float z) {
+		super();
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+
+	public Vector(Vector anotherVector) {
+		x = anotherVector.x;
+		y = anotherVector.y;
+		z = anotherVector.z;
+	}
+
+    public float getX() {
 		return x;
+	}
+
+	public float getY() {
+		return y;
+	}
+
+	public float getZ() {
+		return z;
 	}
 
 	public void setX(float x) {
 		this.x = x;
 	}
 
-	float y;
-
-	public float getY() {
-		return y;
-	}
-
 	public void setY(float y) {
 		this.y = y;
 	}
 
-	float z;
-
-	public float getZ() {
-		return z;
-	}
-
 	public void setZ(float z) {
-		this.z = z;
-	}
-
-	public Vector(float x, float y, float z) {
-		super();
-		this.x = x;
-		this.y = y;
 		this.z = z;
 	}
 

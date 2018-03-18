@@ -1,7 +1,6 @@
 package org.lakos.lakosbot;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -13,7 +12,6 @@ import android.content.IntentFilter;
 import android.content.res.ColorStateList;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
@@ -42,9 +40,9 @@ import static org.lakos.lakosbot.BluetoothConnectionThread.BTC_CLOSE;
 import static org.lakos.lakosbot.BluetoothConnectionThread.BTC_CREATE;
 import static org.lakos.lakosbot.BluetoothConnectionThread.BTC_START;
 
-public class ActivityMain extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CalibrationDialog.CalibrationDialogListener {
 
-    private static final String TAG = ActivityMain.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     // Intent request codes
     private static final int REQUEST_ENABLE_BT = 10;
@@ -331,7 +329,7 @@ public class ActivityMain extends AppCompatActivity {
                             BluetoothDevice d = deviceListAdapter.getItem(pos);
                             connectToBluetoothDevice(d);
                         } else {
-                            Toasty.warning(ActivityMain.this, "No device selected.").show();
+                            Toasty.warning(MainActivity.this, "No device selected.").show();
                         }
                     }
                 })
@@ -382,48 +380,25 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     private void startPhoneCalibration() {
-        // TODO: calibration
-        /*if (!mStarted) {
-            switch (mCalibrationState) {
-                case CALIBRATION_FINISHED:
-                    mMessageArrayAdapter
-                            .add("Position NEUTRAL and press Calibrate.");
-                    mCalibrationState = CALIBRATION_NEUTRAL;
-                    break;
-                case CALIBRATION_NEUTRAL:
-                    neutralVector.setValue(currentVector);
-                    mMessageArrayAdapter
-                            .add("Position FORWARD and press Calibrate.");
-                    mCalibrationState = CALIBRATION_FORWARD;
-                    break;
-                case CALIBRATION_FORWARD:
-                    forwardVector.setValue(currentVector
-                            .subtract(neutralVector));
-                    mMessageArrayAdapter
-                            .add("Position REVERSE and press Calibrate.");
-                    mCalibrationState = CALIBRATION_REVERSE;
-                    break;
-                case CALIBRATION_REVERSE:
-                    reverseVector.setValue(currentVector
-                            .subtract(neutralVector));
-                    mMessageArrayAdapter
-                            .add("Position LEFT and press Calibrate.");
-                    mCalibrationState = CALIBRATION_LEFT;
-                    break;
-                case CALIBRATION_LEFT:
-                    leftVector.setValue(currentVector.subtract(neutralVector));
-                    mMessageArrayAdapter
-                            .add("Position RIGHT and press Calibrate.");
-                    mCalibrationState = CALIBRATION_RIGHT;
-                    break;
-                case CALIBRATION_RIGHT:
-                    rightVector.setValue(currentVector.subtract(neutralVector));
-                    mMessageArrayAdapter.add("Calibration finished.");
-                    mCalibrationState = CALIBRATION_FINISHED;
-                    break;
-            }
-        }
-        */
+        // disable robot control while calibrating ...
+        robotControlActive = false;
+
+        // display calibration dialog
+        CalibrationDialog dialog = new CalibrationDialog();
+        dialog.show(this, getSupportFragmentManager());
     }
 
+    @Override
+    public void calibrationDialogResult(Vector[] vectors) {
+        Log.d(TAG, "Calibration vectors received...");
+        for(int i=0; i<5; i++) {
+            if(vectors[i] == null) {
+                Log.d(TAG, "Calibration was not completed!");
+                Toasty.warning(this, "Calibration was cancelled!").show();
+                return;
+            }
+        }
+        Log.d(TAG, "Calibration vectors applied to sensor listener!");
+        sensorListener.setVectors(vectors[0], vectors[1], vectors[2], vectors[3], vectors[4]);
+    }
 }
