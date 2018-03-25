@@ -5,6 +5,7 @@ int low[6], high[6]; //inicializacija
 void setup() {
   while(!Serial);
   delay(100);
+}
 
 void loop() {
   Serial.println("Odstrani vse ovire pred senzorji!");
@@ -13,7 +14,7 @@ void loop() {
   //prve prebrane vrednosti zapises v low in high
   robot.distance.readRaw();
   for (int i = 0; i < 6; i++){
-    (int)round(robot.distance.sensorsRaw[i]) = low[i];
+    low[i] = (int)round(robot.distance.sensorsRaw[i]);
     high[i] = low[i];
   }
   delay(5);
@@ -40,7 +41,6 @@ void loop() {
   //sedaj iscemo se najvecje vrednosti, ko so senzorji prekriti
   Serial.println("Sedaj postavi dlan pred senzorje!");
   delay(1000);
-  Serial.println();
   Serial.println("Ko končaš, pritisni gumb na robotu za nadaljevanje.");
   delay(5);
   while (!robot.buttonPressed()){
@@ -65,6 +65,7 @@ void loop() {
   for (int i = 0; i < 6; i++){
     Serial.print(i);
     Serial.print('\t');
+    delay(5);
   }
   Serial.println();
   delay(5);
@@ -73,6 +74,7 @@ void loop() {
   for (int i = 0; i < 6; i++){
     Serial.print(low[i]);
     Serial.print('\t');
+    delay(5);
   }
   Serial.println();
   delay(5);
@@ -81,6 +83,7 @@ void loop() {
   for (int i = 0; i < 6; i++){
     Serial.print(high[i]);
     Serial.print('\t');
+    delay(5);
   }
   Serial.println();
   delay(5);
