@@ -15,6 +15,8 @@
 #include <math.h>
 #include "Wire.h"
 
+Test test = Test();
+
 /*
   Izpise napetost baterije v [V].
 */
