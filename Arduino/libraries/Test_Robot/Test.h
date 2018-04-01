@@ -21,7 +21,7 @@
 class Test
 {
   public:
-    //klic funkcije v Arduino IDE okolju je: test.battery();
+    //klic funkcije v Arduino IDE okolju je npr.: test.battery();
     void battery();
     void leftMotor();
     void rightMotor();
@@ -30,6 +30,8 @@ class Test
     void mag();
     void accel();
     void gyro();
+    void distance();
+    void line();
 
     Robot robot;
 

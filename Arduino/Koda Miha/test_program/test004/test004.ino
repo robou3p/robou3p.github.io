@@ -1,22 +1,25 @@
-#include <Distance.h>
-#include <Filters.h>
-#include <Line.h>
-#include <Motor.h>
-#include <MPU9250.h>
 #include <Robot.h>
 #include <Test.h>
-#include <Util.h>
-
 
 void setup() {
   while (!Serial);
+  Serial.println("Zapuscas setup, pritisni gumb na robotu!");
 }
 
 void loop() {
-  //test.battery();
-  //test.buzzer();
-  test.temp(); //ne dela
-  //test.rightMotor(); //ne dela
+  if(robot.buttonPressed()){
+    delay(500);
+    //test.battery();
+    //test.leftMotor();
+    //test.rightMotor();
+    //test.buzzer();
+    //test.temp();
+    //test.mag();
+    //test.accel();
+    //test.gyro();
+    //test.distance();
+    //test.line();
+  }
 
-  delay(2000);
+  delay(100);
 }
