@@ -345,30 +345,26 @@ void Test::distance(){
   delay(5);
   //izpis rezultatov uporabniku
   Serial.println("/////////////////////////////////////////////////////////");
-  delay(5);
-  //izpis zaporednih stevilk senzorjev
-  Serial.print("ŠT.: ");
-  for (int i = 1; i < 7; i++){
-    Serial.print(i);
-    Serial.print('\t');
-    delay(50);
-  }
   Serial.println();
   delay(5);
   //izpis minimalnih prebranih vrednosti low[i]
-  Serial.print("MIN: ");
+  Serial.println("MIN: ");
   for (int i = 0; i < 6; i++){
-    Serial.print(low[i]);
-    Serial.print('\t');
+    Serial.print("senzor ");
+    Serial.print(i);
+    Serial.print(": ");
+    Serial.println(low[i]);
     delay(5);
   }
   Serial.println();
   delay(5);
   //izpis maksimalnih prebranih vrednosti high[i]
-  Serial.print("MAX: ");
+  Serial.println("MAX: ");
   for (int i = 0; i < 6; i++){
-    Serial.print(high[i]);
-    Serial.print('\t');
+    Serial.print("senzor ");
+    Serial.print(i);
+    Serial.print(": ");
+    Serial.println(high[i]);
     delay(5);
   }
   Serial.println();
