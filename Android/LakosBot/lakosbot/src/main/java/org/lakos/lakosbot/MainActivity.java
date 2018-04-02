@@ -1,5 +1,6 @@
 package org.lakos.lakosbot;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -9,31 +10,45 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 
 import butterknife.BindColor;
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import es.dmoral.toasty.Toasty;
@@ -52,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     // Bound views
     @BindView(R.id.buttonActivate) AppCompatButton buttonActivate;
     @BindView(R.id.textViewTest) TextView textViewTest;
+    @BindView(R.id.compassView) CompassView compassView;
 
     // Bound resources
     @BindColor(R.color.colorActivateButtonGreen) int colorActivateButtonGreen;
@@ -63,12 +79,93 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     // Accelerometer
     private SensorManager sensorManager;
     private SensorListener sensorListener;
+    Sensor accelerometer;
+    Sensor magnetometer;
 
     // Misc
     private android.support.v7.app.ActionBar activityActionBar;
     private Menu activityMenu;
 
     private boolean robotControlActive = false;
+
+    // Permissions
+    /*final private int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 124;
+
+    public void wrapper() {
+        final List<String> permissionsList = new ArrayList<String>();
+        List<String> permissionsNeeded = new ArrayList<String>();
+
+
+        if (!addPermission(permissionsList, Manifest.permission.READ_PHONE_STATE))
+            permissionsNeeded.add("Read phone state");
+        if (!addPermission(permissionsList, Manifest.permission.ACCESS_COARSE_LOCATION))
+            permissionsNeeded.add("Access coarse location");
+
+        if (permissionsList.size() > 0) {
+            if (permissionsNeeded.size() > 0) {
+                // Need Rationale
+                String message = "You need to grant access to " + permissionsNeeded.get(0);
+                for (int i = 1; i < permissionsNeeded.size(); i++)
+                    message = message + ", " + permissionsNeeded.get(i);
+                showMessageOKCancel(message,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
+                                        REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS);
+                            }
+                        });
+            }
+            requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
+                    REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS);
+        }
+    }
+    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+        new AlertDialog.Builder(MainActivity.this)
+                .setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancel", null)
+                .create()
+                .show();
+    }
+
+    private boolean addPermission(List<String> permissionsList, String permission) {
+        if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
+            permissionsList.add(permission);
+
+            if (!shouldShowRequestPermissionRationale(permission))
+                return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS:
+            {
+                Map<String, Integer> perms = new HashMap<String, Integer>();
+
+                // Initial
+                perms.put(Manifest.permission.READ_PHONE_STATE, PackageManager.PERMISSION_GRANTED);
+                perms.put(Manifest.permission.ACCESS_COARSE_LOCATION, PackageManager.PERMISSION_GRANTED);
+
+                // Fill with results
+                for (int i = 0; i < permissions.length; i++) {
+                    perms.put(permissions[i], grantResults[i]);
+                }
+
+                if (perms.get(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
+                        && perms.get(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+                    Toast.makeText(MainActivity.this, "Some Permission is Denied!", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            }
+            default: super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }*/
 
     // Bound actions
     @SuppressLint("RestrictedApi")
@@ -153,6 +250,13 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
         // Bind views
         ButterKnife.bind(this);
+        ButterKnife.bind(compassView);
+
+        // dodajanje senzorjev
+        //wrapper();
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
         // Set up the custom title
         activityActionBar = getSupportActionBar();
@@ -166,7 +270,10 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         // Initialize and ask for bluetooth
         // Initialize accelerometer sensor
         initBluetooth();
+
         initAccelerometer();
+
+        initMagnetometer();
 
         // Initialize a handler with seperate thread that will be sending messages to robot
         messageSenderHandler = new Handler();
@@ -185,6 +292,10 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         LocalBroadcastManager.getInstance(this).registerReceiver(btStateBroadcastReceiver, f);
         initUI();
         SensorConfigurationLoader.loadCalibration(this, sensorListener);
+
+        // accelerometer, magnetometer
+        sensorManager.registerListener(sensorListener, accelerometer, SensorManager.SENSOR_DELAY_UI);
+        sensorManager.registerListener(sensorListener, magnetometer, SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
@@ -193,6 +304,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         LocalBroadcastManager.getInstance(this).unregisterReceiver(btStateBroadcastReceiver);
         messageSenderHandler.removeCallbacks(messageSenderRunnable);
         stopBluetoothDiscovery();
+        sensorManager.unregisterListener(sensorListener);
         robotControlActive = false;
     }
 
@@ -228,11 +340,17 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         }
     }
 
-    private void initAccelerometer() {
+   private void initAccelerometer() {
         // Initialize and register sensor listener
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         sensorListener = new SensorListener();
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    private void initMagnetometer() {
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        sensorListener = new SensorListener();
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @SuppressLint("RestrictedApi")

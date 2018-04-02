@@ -3,6 +3,7 @@ package org.lakos.lakosbot;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 
 /**
  * Created by martin on 14.3.2018.
@@ -10,6 +11,7 @@ import android.hardware.SensorEventListener;
 
 public class SensorListener implements SensorEventListener {
 
+    Float azimut;
     private static final int MAX_SPEED_VALUE = 255;
 
     public SensorListener() {
@@ -52,6 +54,23 @@ public class SensorListener implements SensorEventListener {
         leftVector.setValue(left);
         rightVector.setValue(right);
     }
+
+    private static final float ALPHA = 0.5f;
+
+    private float[] applyLowPassFilter(float[] input, float[] output) {
+        if (output == null) {
+            return input;
+        }
+
+        for (int i = 0; i < input.length; i++) {
+            output[i] = output[i] + ALPHA * (input[i] - output[i]);
+        }
+
+        return output;
+    }
+
+    float[] gravity;
+    float[] geomagnetic;
 
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -112,6 +131,26 @@ public class SensorListener implements SensorEventListener {
             sendMessage(new byte[] { dirR });
             sendMessage(new byte[] { (byte) ((int) Math.abs(speedR)) });
             */
+        }
+
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            gravity = applyLowPassFilter(event.values.clone(), gravity);
+        }
+        if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
+            geomagnetic = applyLowPassFilter(event.values.clone(), geomagnetic);
+        }
+
+        if (gravity != null && geomagnetic != null){
+            float R[] = new float[9];
+            float I[] = new float[9];
+
+            boolean success = SensorManager.getRotationMatrix(R, I, gravity, geomagnetic);
+
+            if (success) {
+                float orientation[] = new float[3];
+                SensorManager.getOrientation(R, orientation);
+                azimut = -orientation[0];
+            }
         }
     }
 

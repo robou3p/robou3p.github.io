@@ -13,4 +13,5 @@
 
     <color name="colorActivateButtonRed">#F44336</color>
     <color name="colorActivateButtonGreen">#4CAF50</color>
+    <color name="colorBackground">#35454d</color>
 </resources>

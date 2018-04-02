@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/activity_margin">
+    android:background="@color/colorBackground">
 
     <FrameLayout
         android:id="@+id/frameLayoutMain"
@@ -18,17 +18,25 @@
             android:id="@+id/textViewTest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="n/a"
             style="@style/TextAppearance.AppCompat.Medium"/>
-
     </FrameLayout>
+
+
+    <org.lakos.lakosbot.CompassView
+        android:id="@+id/compassView"
+        android:layout_width="match_parent"
+        android:layout_height="330dp" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/buttonActivate"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:background="@drawable/rounded_button"
         app:backgroundTint="@color/colorActivateButtonGreen"
         android:padding="10dp"
+        android:layout_margin="10dp"
         android:text="Start robot control" />
 
 </LinearLayout>
