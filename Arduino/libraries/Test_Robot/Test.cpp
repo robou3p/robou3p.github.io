@@ -50,6 +50,10 @@ void Test::leftMotor(){
     }
     robot.motor[LEFT].setVoltage(U);
     delay(1000);
+    //TO JE DODANO SAMO ZA ODPRAVLJANJE NAPAK
+    Serial.println(robot.motor[LEFT].getSpeed());  //NE DELA
+    Serial.println(robot.motor[LEFT].getVoltage());  //DELA
+    //
     if (robot.motor[LEFT].getSpeed() == 0.0){
       Serial.println("Enkoderji ne delujejo. Funkcija robot.motor[LEFT].getSpeed() vrača 0.00");
       delay(5);
