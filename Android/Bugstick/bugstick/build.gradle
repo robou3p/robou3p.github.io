@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'bintray-release'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 2
+        versionName "0.2.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:support-annotations:26.1.0'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    //dependencies {
+    //    classpath 'com.novoda:bintray-release:0.3.4'
+    //}
+}
+
+// see https://github.com/novoda/bintray-release/wiki/Configuration-of-the-publish-closure
+//publish {
+//    userOrg = 'justasm'
+//    groupId = 'com.jmedeisis'
+//    artifactId = 'bugstick'
+//    version = "0.2.2"
+//    licences = ['MIT']
+//    desc = "Joystick widget for Android."
+//    website = 'https://github.com/justasm/Bugstick'
+//}
