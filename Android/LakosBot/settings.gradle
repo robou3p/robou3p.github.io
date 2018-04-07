@@ -1,1 +1,2 @@
-include ':lakosbot'
+include ':lakosbot', ':bugstick'
+project(':bugstick').projectDir = new File(settingsDir, '../Bugstick/bugstick/')

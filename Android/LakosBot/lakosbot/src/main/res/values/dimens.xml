@@ -1,4 +1,7 @@
 <resources>
     <dimen name="activity_margin">10dp</dimen>
     <dimen name="dialog_margin">16dp</dimen>
+    <dimen name="base_size">280dp</dimen>
+    <dimen name="stick_size">90dp</dimen>
+    <dimen name="activity_padding">8dp</dimen>
 </resources>

@@ -1,6 +1,5 @@
 package org.lakos.lakosbot;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -10,45 +9,39 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jmedeisis.bugstick.Joystick;
+import com.jmedeisis.bugstick.JoystickListener;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Set;
 
 import butterknife.BindColor;
+import butterknife.BindDrawable;
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import es.dmoral.toasty.Toasty;
@@ -67,11 +60,16 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     // Bound views
     @BindView(R.id.buttonActivate) AppCompatButton buttonActivate;
     @BindView(R.id.textViewTest) TextView textViewTest;
-    @BindView(R.id.compassView) CompassView compassView;
+    //@BindView(R.id.compassView) CompassView compassView;
+    @BindView(R.id.joystick) Joystick joystick;
+    @BindView(R.id.joystickButton) Button joystickButton;
 
     // Bound resources
     @BindColor(R.color.colorActivateButtonGreen) int colorActivateButtonGreen;
     @BindColor(R.color.colorActivateButtonRed) int colorActivateButtonRed;
+
+    @BindDrawable(R.drawable.joystick_button_disabled) Drawable drawableJoystickButtonDisabled;
+    @BindDrawable(R.drawable.joystick_button_enabled) Drawable drawableJoystickButtonEnabled;
 
     // Bluetooth
     private BluetoothAdapter bluetoothAdapter;
@@ -83,108 +81,41 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     Sensor magnetometer;
 
     // Misc
-    private android.support.v7.app.ActionBar activityActionBar;
+    private ActionBar activityActionBar;
     private Menu activityMenu;
 
     private boolean robotControlActive = false;
 
-    // Permissions
-    /*final private int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 124;
-
-    public void wrapper() {
-        final List<String> permissionsList = new ArrayList<String>();
-        List<String> permissionsNeeded = new ArrayList<String>();
-
-
-        if (!addPermission(permissionsList, Manifest.permission.READ_PHONE_STATE))
-            permissionsNeeded.add("Read phone state");
-        if (!addPermission(permissionsList, Manifest.permission.ACCESS_COARSE_LOCATION))
-            permissionsNeeded.add("Access coarse location");
-
-        if (permissionsList.size() > 0) {
-            if (permissionsNeeded.size() > 0) {
-                // Need Rationale
-                String message = "You need to grant access to " + permissionsNeeded.get(0);
-                for (int i = 1; i < permissionsNeeded.size(); i++)
-                    message = message + ", " + permissionsNeeded.get(i);
-                showMessageOKCancel(message,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
-                                        REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS);
-                            }
-                        });
-            }
-            requestPermissions(permissionsList.toArray(new String[permissionsList.size()]),
-                    REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS);
-        }
-    }
-    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
-        new AlertDialog.Builder(MainActivity.this)
-                .setMessage(message)
-                .setPositiveButton("OK", okListener)
-                .setNegativeButton("Cancel", null)
-                .create()
-                .show();
-    }
-
-    private boolean addPermission(List<String> permissionsList, String permission) {
-        if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
-            permissionsList.add(permission);
-
-            if (!shouldShowRequestPermissionRationale(permission))
-                return false;
-        }
-        return true;
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS:
-            {
-                Map<String, Integer> perms = new HashMap<String, Integer>();
-
-                // Initial
-                perms.put(Manifest.permission.READ_PHONE_STATE, PackageManager.PERMISSION_GRANTED);
-                perms.put(Manifest.permission.ACCESS_COARSE_LOCATION, PackageManager.PERMISSION_GRANTED);
-
-                // Fill with results
-                for (int i = 0; i < permissions.length; i++) {
-                    perms.put(permissions[i], grantResults[i]);
-                }
-
-                if (perms.get(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
-                        && perms.get(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-
-                } else {
-                    Toast.makeText(MainActivity.this, "Some Permission is Denied!", Toast.LENGTH_SHORT).show();
-                }
-                break;
-            }
-            default: super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-    }*/
-
     // Bound actions
-    @SuppressLint("RestrictedApi")
     @OnClick(R.id.buttonActivate) public void buttonActivateOnClick() {
         robotControlActive = !robotControlActive;
 
+        buttonActivateUpdate();
+    }
+
+    @SuppressLint("RestrictedApi")
+    private void buttonActivateUpdate() {
         if(robotControlActive) {
-            // robot control is running!
+            // robot control with accelerometer is running!
             messageSenderHandler.removeCallbacks(messageSenderRunnable);
             messageSenderHandler.post(messageSenderRunnable);
 
             buttonActivate.setSupportBackgroundTintList(ColorStateList.valueOf(colorActivateButtonRed));
             buttonActivate.setText("Stop robot control");
+
+            // disable joystick manual control
+            joystick.setEnabled(false);
+            joystickButton.setBackground(drawableJoystickButtonDisabled);
         } else {
-            // robot control has stopped!
+            // robot control with accelerometer has stopped!
             messageSenderHandler.removeCallbacks(messageSenderRunnable);
 
             buttonActivate.setSupportBackgroundTintList(ColorStateList.valueOf(colorActivateButtonGreen));
             buttonActivate.setText("Start robot control");
+
+            // enable joystick manual control
+            joystick.setEnabled(true);
+            joystickButton.setBackground(drawableJoystickButtonEnabled);
         }
     }
 
@@ -248,9 +179,8 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Bind views
+        // Bind views defined with @Bind* annotations
         ButterKnife.bind(this);
-        ButterKnife.bind(compassView);
 
         // dodajanje senzorjev
         //wrapper();
@@ -274,6 +204,8 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         initAccelerometer();
 
         initMagnetometer();
+
+        initJoystick();
 
         // Initialize a handler with seperate thread that will be sending messages to robot
         messageSenderHandler = new Handler();
@@ -312,7 +244,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     protected void onDestroy() {
         super.onDestroy();
         sensorManager.unregisterListener(sensorListener);
-        btConnectionThread.cancel();
+        if(btConnectionThread != null) btConnectionThread.cancel();
         bluetoothAdapter.disable();
     }
 
@@ -353,16 +285,88 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-    @SuppressLint("RestrictedApi")
     private void initUI() {
         // Initialize button
-        if(robotControlActive) {
-            buttonActivate.setSupportBackgroundTintList(ColorStateList.valueOf(colorActivateButtonRed));
-            buttonActivate.setText("Stop robot control");
-        } else {
-            buttonActivate.setSupportBackgroundTintList(ColorStateList.valueOf(colorActivateButtonGreen));
-            buttonActivate.setText("Start robot control");
-        }
+        buttonActivateUpdate();
+    }
+
+    private void initJoystick() {
+        joystick.setEnabled(false);
+        joystick.setJoystickListener(new JoystickListener() {
+
+            float wheelL, wheelR = 0;
+            float offset;
+
+            @Override
+            public void onDown() {
+                // ..
+            }
+
+            @Override
+            public void onDrag(float degrees, float offset) {
+                this.offset = offset;
+                /*
+                 degrees are values from (-180) to (180) - starting with 0 on the right and ending
+                 with 180 on the left. Upper half is positive numbers, lower half is negative numb.
+
+                 offset are values from (0) to (1) - distance from center position of the joystick
+                 button
+                 */
+                final int BACKWARD = 0, FORWARD = 1;
+                final int LEFT = 0, RIGHT = 1;
+                final int MODE1 = 0, MODE2 = 1;
+
+                int direction;
+                if(degrees < 0) direction = BACKWARD;
+                else direction = FORWARD;
+                degrees = Math.abs(degrees);
+
+                int firstWheel;
+                if(degrees > 90) firstWheel = LEFT;
+                else firstWheel = RIGHT;
+
+                if(degrees > 90) degrees = degrees - ( (degrees - 90) * 2 );
+                float normalizedDegrees = degrees / 45; // [0, 2]
+
+                int mode = MODE2;
+                if(mode == MODE1) {
+                    // MODE 1 (full right makes left wheel full forward and right wheel full backward - rotation in place)
+                    if (firstWheel == LEFT) {
+                        wheelL = -1 + normalizedDegrees;
+                        wheelR = +1;
+                    } else {
+                        wheelL = +1;
+                        wheelR = -1 + normalizedDegrees;
+                    }
+                } else if(mode == MODE2) {
+                    // MODE 2 (full right makes left wheel full forward and right wheel with no movement - rotation around stopped wheel)
+                    if (firstWheel == LEFT) {
+                        wheelL = normalizedDegrees / 2;
+                        wheelR = +1;
+                    } else {
+                        wheelL = +1;
+                        wheelR = normalizedDegrees / 2;
+                    }
+                } else {
+                    wheelL = wheelR = 0;
+                }
+
+                if(direction == FORWARD) {
+                    ;
+                } else {
+                    wheelL *= -1;
+                    wheelR *= -1;
+                }
+
+                textViewTest.setText(String.format(Locale.ENGLISH, "L:%d\nD:%d", Math.round(wheelL*100*Math.pow(offset, 2)), Math.round(wheelR*100*Math.pow(offset,2 ))));
+            }
+
+            @Override
+            public void onUp() {
+                wheelL = wheelR = 0;
+                textViewTest.setText(String.format(Locale.ENGLISH, "L:%d\nD:%d", Math.round(wheelL*100*Math.pow(offset, 2)), Math.round(wheelR*100*Math.pow(offset,2 ))));
+            }
+        });
     }
 
     @Override
