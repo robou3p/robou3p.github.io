@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.3"
     defaultConfig {
         applicationId "org.lakos.lakosbot"
         minSdkVersion 19
@@ -19,16 +18,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':bugstick')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':bugstick')
 
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    //compile 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    //implementation 'com.android.support:design:26.1.0'
 
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     implementation 'com.github.GrenderG:Toasty:1.2.8'
 
-    //compile 'com.jmedeisis:bugstick:0.2.2'
+    //implementation 'com.jmedeisis:bugstick:0.2.2'
 }
