@@ -209,13 +209,19 @@ void Test::accel(){
       Serial.println("Napaka! Meritve v vseh treh smereh so enake 0.00 [m/s2].");
       break;
     }
-
-    Serial.print("X=");
-    Serial.print(accelX);
-    Serial.print("  Y=");
-    Serial.print(accelY);
-    Serial.print("  Z=");
-    Serial.println(accelZ);
+    //ce je bil v doloceni smeri ze presezen prag, se ta smer neha izpisovati
+    if (!tmpX){
+      Serial.print("X=");
+      Serial.print(accelX);
+    }
+    if (!tmpY){
+      Serial.print("  Y=");
+      Serial.print(accelY);
+    }
+    if (!tmpZ){
+      Serial.print("  Z=");
+      Serial.print(accelZ);
+    }
 
     if (abs(accelX) > prag) tmpX = 1; //preveri ce je zaznano gibanje mocnejse od paga
     if (abs(accelY) > prag) tmpY = 1;
@@ -264,10 +270,19 @@ void Test::gyro(){
 
     Serial.print("X=");
     Serial.print(gyroX);
-    Serial.print("  Y=");
-    Serial.print(gyroY);
-    Serial.print("  Z=");
-    Serial.println(gyroZ);
+    //ce je bil v doloceni smeri ze presezen prag, se ta smer neha izpisovati
+    if (!tmpX){
+      Serial.print("X=");
+      Serial.print(gyroX);
+    }
+    if (!tmpY){
+      Serial.print("  Y=");
+      Serial.print(gyroY);
+    }
+    if (!tmpZ){
+      Serial.print("  Z=");
+      Serial.print(gyroZ);
+    }
 
     if (abs(gyroX) > prag) tmpX = 1; //preveri ce je zaznano gibanje mocnejse od paga
     if (abs(gyroY) > prag) tmpY = 1;
