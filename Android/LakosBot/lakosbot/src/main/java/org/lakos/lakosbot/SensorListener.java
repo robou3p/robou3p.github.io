@@ -4,6 +4,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.util.Log;
 
 /**
  * Created by martin on 14.3.2018.
@@ -12,7 +13,8 @@ import android.hardware.SensorManager;
 public class SensorListener implements SensorEventListener {
 
     Float azimut;
-    private static final int MAX_SPEED_VALUE = 255;
+    private static final int MAX_SPEED_VALUE = 100;
+    private static final int SPEED_MULTIPLIER = 100;
 
     public SensorListener() {
         currentVector = new Vector();
@@ -93,23 +95,28 @@ public class SensorListener implements SensorEventListener {
             float z = event.values[2];
             currentVector.setValue(x, y, z);
 
+            // those are values between -1 and 1
             float forward = currentVector.getComponent(forwardVector);
             float reverse = currentVector.getComponent(backwardVector);
             float left = currentVector.getComponent(leftVector);
             float right = currentVector.getComponent(rightVector);
 
-            float speed = 20 * (forward - reverse);
-            float speedValue = (float) Math.pow(Math.abs(speed), 1.20f);
-            if (speed < 0)
-                speedValue *= -0.9;
+            float speed = (forward - reverse) * SPEED_MULTIPLIER;
+            float speedValue = speed;
+            //float speedValue = (float) Math.pow(Math.abs(speed), 1.20f);
+            //if (speed < 0) speedValue *= -0.9;
 
-            float steer = 20 * (right - left);
-            float steerValue = (float) Math.pow(Math.abs(steer), 1.20f);
-            if (steer < 0)
-                steerValue *= -1;
+            float steer = (right - left) * SPEED_MULTIPLIER;
+            float steerValue = steer; //float steerValue = (float) Math.pow(Math.abs(steer), 1.20f);
+            //if (steer < 0) steerValue *= -1;
+
+            //Log.i("SENSOOOOOOOOOOORRR", String.format("speed: %3.3f, steer: %3.3f", speed, steer));
+            //Log.i("SENSOOOOOOOOOOORRR", String.format("speedValue: %3.3f, steerValue: %3.3f", speedValue, steerValue));
 
             float speedR = speedValue - steerValue/10 - steerValue * speedValue / 100;
             float speedL = speedValue + steerValue/10 + steerValue * speedValue / 100;
+
+            Log.i("SENSOOOOOOOOOOORRR", String.format("r: %3.3f, l: %3.3f", speedR, speedL));
 
             // Limit speed value between +MAX and -MAX
             speedR = Math.max(Math.min(speedR, MAX_SPEED_VALUE), -MAX_SPEED_VALUE);

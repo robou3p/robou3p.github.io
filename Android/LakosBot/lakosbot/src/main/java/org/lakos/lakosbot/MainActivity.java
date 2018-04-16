@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
             // disable joystick manual control
             joystick.setEnabled(false);
+            joystick.setJoystickButtonPosition(-0.75f, -0.25f); // test
             joystickButton.setBackground(drawableJoystickButtonDisabled);
         } else {
             // robot control with accelerometer has stopped!
@@ -133,28 +135,35 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
             byte[] data = sensorListener.getDirsAndSpeeds();
 
-            textViewTest.setText(String.format(Locale.ENGLISH, "L:%d (%d) \nD:%d (%d)", data[1], data[0], data[3], data[2]));
+            sendData(data);
 
-            if(btConnectionThread != null && robotControlActive) {
-
-                byte msg[] = {
-                        'L',
-                        data[0], // dirL
-                        data[1], // speedL
-                        'R',
-                        data[2], // dirR
-                        data[3], // speedR
-                };
-
-                Log.i(TAG, "Sending message: " + Arrays.toString(msg));
-
-                btConnectionThread.write(msg);
-            } else {
-                Log.w(TAG, "BluetoothConnectionThread is null!");
-            }
             messageSenderHandler.postDelayed(messageSenderRunnable, 100);
         }
     };
+
+    /**
+     * @param data should have 4 elements, in order: directionLeft, speedLeft, directionR, speedR
+     */
+    public void sendData(byte[] data) {
+        String dirLstr = data[0] == 0 ? "back" : "forw";
+        String dirRstr = data[2] == 0 ? "back" : "forw";
+        textViewTest.setText(String.format(Locale.ENGLISH, "L: %3d %s\nD: %3d %s", data[1], dirLstr, data[3], dirRstr));
+
+        if(btConnectionThread != null && robotControlActive) {
+            byte msg[] = {
+                    'L',
+                    data[0], // dirL
+                    data[1], // speedL
+                    'R',
+                    data[2], // dirR
+                    data[3], // speedR
+            };
+            Log.i(TAG, "Sending message: " + Arrays.toString(msg));
+            btConnectionThread.write(msg);
+        } else {
+            Log.w(TAG, "BluetoothConnectionThread is null!");
+        }
+    }
 
     // Prepare a broadcast listener for bluetooth connection state changes
     BroadcastReceiver btStateBroadcastReceiver = new BroadcastReceiver() {
@@ -196,6 +205,8 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
             activityActionBar.setTitle("LakosBot");
             setActionBarSubtitle("Not connected");
         }
+
+        textViewTest.setText("L:\nR:");
 
         // Initialize and ask for bluetooth
         // Initialize accelerometer sensor
@@ -281,8 +292,8 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
     private void initMagnetometer() {
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        sensorListener = new SensorListener();
-        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_NORMAL);
+        //sensorListener = new SensorListener();
+        //sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     private void initUI() {
@@ -292,6 +303,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
     private void initJoystick() {
         joystick.setEnabled(false);
+        joystick.setTouchSlop(0);
         joystick.setJoystickListener(new JoystickListener() {
 
             float wheelL, wheelR = 0;
@@ -358,13 +370,36 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                     wheelR *= -1;
                 }
 
-                textViewTest.setText(String.format(Locale.ENGLISH, "L:%d\nD:%d", Math.round(wheelL*100*Math.pow(offset, 2)), Math.round(wheelR*100*Math.pow(offset,2 ))));
+                byte wheelLDirection = (byte) (wheelL >= 0 ? 1 : 0);
+                byte wheelRDirection = (byte) (wheelR >= 0 ? 1 : 0);
+
+                byte wheelLFinal = (byte) Math.abs(Math.round(wheelL*100*Math.pow(offset, 1.6)));
+                byte wheelRFinal = (byte) Math.abs(Math.round(wheelR*100*Math.pow(offset, 1.6)));
+
+                byte[] data = {wheelLDirection, wheelLFinal, wheelRDirection, wheelRFinal};
+
+                sendData(data);
+
             }
 
             @Override
             public void onUp() {
                 wheelL = wheelR = 0;
-                textViewTest.setText(String.format(Locale.ENGLISH, "L:%d\nD:%d", Math.round(wheelL*100*Math.pow(offset, 2)), Math.round(wheelR*100*Math.pow(offset,2 ))));
+                if(btConnectionThread != null) {
+                    byte msg[] = {
+                            'L',
+                            0, // dirL
+                            0, // speedL
+                            'R',
+                            0, // dirR
+                            0, // speedR
+                    };
+                    Log.i(TAG, "Sending message: " + Arrays.toString(msg));
+                    btConnectionThread.write(msg);
+                } else {
+                    Log.w(TAG, "BluetoothConnectionThread is null!");
+                }
+                //textViewTest.setText(String.format(Locale.ENGLISH, "L:%d\nD:%d", Math.round(wheelL*100*Math.pow(offset, 2)), Math.round(wheelR*100*Math.pow(offset,2 ))));
             }
         });
     }
@@ -408,6 +443,12 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                 return true;
             case R.id.calibrate:
                 startPhoneCalibration();
+                return true;
+            case R.id.rotate:
+                if(getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                else
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 return true;
         }
         return false;

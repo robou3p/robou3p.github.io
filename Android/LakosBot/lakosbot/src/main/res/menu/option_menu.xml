@@ -13,5 +13,9 @@
         android:icon="@drawable/ic_screen_rotation_white"
         android:title="Start phone calibration"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/rotate"
+        android:title="Rotate screen"
+        app:showAsAction="never" />
 
 </menu>

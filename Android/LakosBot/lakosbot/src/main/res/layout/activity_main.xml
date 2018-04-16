@@ -8,13 +8,6 @@
     android:orientation="vertical"
     android:background="@color/colorBackground">
 
-    <TextView
-        android:id="@+id/textViewTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorWhite"
-        android:text="n/a" />
-
     <FrameLayout
         android:id="@+id/frameLayoutMain"
         android:layout_width="match_parent"
@@ -38,6 +31,14 @@
         </com.jmedeisis.bugstick.Joystick>
 
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="monospace"
+        android:text="n/a" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/buttonActivate"

@@ -362,7 +362,7 @@ public class Joystick extends FrameLayout {
     private void onDragStop() {
         dragInProgress = false;
 
-        if (!locked) {
+        if (!locked && isEnabled()) {
             draggedChild.animate()
                     .translationX(0).translationY(0)
                     .setDuration(STICK_SETTLE_DURATION_MS)
@@ -471,5 +471,18 @@ public class Joystick extends FrameLayout {
         }
 
         super.addView(child, index, params);
+    }
+
+    /**
+     * @param x value between -1 and 1
+     * @param y value between -1 and 1
+     * @return true if setting position was successful, false otherwise
+     */
+    public boolean setJoystickButtonPosition(float x, float y) {
+        if(isEnabled()) return false;
+        View stick = getChildAt(0);
+        stick.setTranslationX(x*radius);
+        stick.setTranslationY(y*radius);
+        return true;
     }
 }
