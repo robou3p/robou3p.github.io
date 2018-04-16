@@ -3,7 +3,7 @@
 
 void setup() {
   while (!Serial);
-  Serial.println("Zapuscas setup, pritisni gumb na robotu!");
+  Serial.println("Zapuscas setup, pritisni gumb na robotu za nadaljevanje!");
 }
 
 void loop() {

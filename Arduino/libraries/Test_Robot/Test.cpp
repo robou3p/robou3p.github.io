@@ -32,9 +32,20 @@ void Test::battery(){
 }
 
 /*
-  Izpise ali levi motor deluje pravilno ali ne.
+  Izpise ali motor deluje pravilno ali ne.
 */
-void Test::leftMotor(){
+void Test::motor(char LR){
+  //preveri prejet parameter in doloci katero kolo se testira
+  bool wheel;
+  if (LR == 'L'){
+    wheel = 0;
+  }else if (LR == 'R'){
+    wheel = 1;
+  }
+  else {
+    Serial.println("Napačen vhodni prarameter funkcije. Izberi med 'L' ali 'R'.");
+    return;
+  }
   while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
   Serial.println("Za začetek testa LEVEGA MOTORJA, dvignite robota v zrak in pritisnite gumb (tisti, ki NI zraven USB kabla)!");
   Serial.println();
@@ -50,10 +61,18 @@ void Test::leftMotor(){
     }
     robot.motor[LEFT].setVoltage(U);
     delay(1000);
-    //TO JE DODANO SAMO ZA ODPRAVLJANJE NAPAK
+
+
+
+
+    //TO JE DODANO SAMO ZA ODPRAVLJANJE NAPAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     Serial.println(robot.motor[LEFT].getSpeed());  //NE DELA
     Serial.println(robot.motor[LEFT].getVoltage());  //DELA
     //
+
+
+
+
     if (robot.motor[LEFT].getSpeed() == 0.0){
       Serial.println("Enkoderji ne delujejo. Funkcija robot.motor[LEFT].getSpeed() vrača 0.00");
       delay(5);
@@ -76,6 +95,7 @@ void Test::leftMotor(){
 /*
   Izpise ali desni motor deluje pravilno ali ne.
 */
+/*
 void Test::rightMotor(){
   while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
   Serial.println("Za začetek testa DESNEGA MOTORJA, dvignite robota v zrak in pritisnite gumb (tisti, ki NI zraven USB kabla)!");
@@ -110,6 +130,7 @@ void Test::rightMotor(){
   robot.motor[RIGHT].setVoltage(0);
   Serial.println();
 }
+*/
 
 /*
   Vklopi brencac za 5 sekund.
