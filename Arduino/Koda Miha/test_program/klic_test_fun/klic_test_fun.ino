@@ -1,4 +1,4 @@
-#include <Robot.h>
+//#include <Robot.h>
 #include <Test.h>
 
 void setup() {
@@ -10,7 +10,8 @@ void loop() {
   if(robot.buttonPressed()){
     delay(500);
     //test.battery();
-    //test.leftMotor();
+    //Serial.println(robot.motor[LEFT].getSpeed());
+    //test.motor('L');
     //test.rightMotor();
     //test.buzzer();
     //test.temp();
@@ -18,7 +19,7 @@ void loop() {
     //test.accel();
     //test.gyro();
     //test.distance();
-    //test.line();
+    test.line();
   }
 
   delay(100);
