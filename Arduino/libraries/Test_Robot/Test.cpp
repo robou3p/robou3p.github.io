@@ -29,68 +29,69 @@ void Test::battery(){
     return;
   }
   Serial.print("Baterija ima ");
-  Serial.print(robot.battery());
+  Serial.print(robot.battery()); //prebere napetost baterije v [V]
   Serial.println("V napetosti.");
+  Serial.println();
 }
 
 /*
   Izpise ali motor deluje pravilno ali ne.
 */
 void Test::motor(char LR){
-  //preveri prejet parameter in doloci katero kolo se testira
-  bool wheel;
-  if (LR == 'L'){
-    wheel = 0;
+  bool wheel; //spr. za izbrani motor
+  if (LR == 'L'){ //preveri prejet parameter in doloci katero kolo se testira
+    wheel = 0; //levo kolo je 0 ali LEFT
   }else if (LR == 'R'){
-    wheel = 1;
+    wheel = 1; //desno kolo je 1 ali RIGHT
   }
   else {
     Serial.println("Napačen vhodni prarameter funkcije. Vpiši 'L' ali 'R'.");
     return;
   }
+
   while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
   Serial.println("Za začetek testa LEVEGA MOTORJA, dvignite robota v zrak in pritisnite gumb (tisti, ki NI zraven USB kabla)!");
   Serial.println();
-  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
+  while (!robot.buttonPressed()); //caka uporabnika
   Serial.println("/////////////////////////");
-  Serial.println("Če želite prekiniti test, pritisnite gumb.");
+  Serial.println("Če želite prekiniti test med izvajanjem, ponovno pritisnite gumb.");
   delay(2000); //zakasnitev, da debouncing
-  float U = 4.0;
-  int rez = 0;
+  float U = 4.0; //napetost motorja
+  int rez = 0; //ce je 1, potem je ze uspesno prestal test
   while (!rez){
-    if (robot.buttonPressed()){
+    if (robot.buttonPressed()){ //preveri ali uporabnik zeli prekiniti izvajanje testa
       break;
     }
-    robot.motor[LEFT].setVoltage(U);
+    robot.motor[wheel].setVoltage(U); //nastavi napetost motorja
     delay(1000);
 
 
 
 
     //TO JE DODANO SAMO ZA ODPRAVLJANJE NAPAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    Serial.println(robot.motor[LEFT].getSpeed());  //NE DELA
-    Serial.println(robot.motor[LEFT].getVoltage());  //DELA
+    Serial.println(robot.motor[wheel].getSpeed());  //NE DELA
+    Serial.println(robot.motor[wheel].getVoltage());  //DELA
     //
 
 
 
 
-    if (robot.motor[LEFT].getSpeed() == 0.0){
+    if (robot.motor[wheel].getSpeed() == 0.0){
       Serial.println("Enkoderji ne delujejo. Funkcija robot.motor[LEFT].getSpeed() vrača 0.00");
       delay(5);
       break;
     }
-    if (robot.motor[LEFT].getSpeed() > 5.0){
+    if (robot.motor[wheel].getSpeed() > 5.0){
       Serial.println("Levi motor se pravilno vrti naprej.");
-      robot.motor[LEFT].setVoltage(-U);
+      robot.motor[wheel].setVoltage(-U);
       delay(1000);
-      if (robot.motor[LEFT].getSpeed() < -5.0){
+      if (robot.motor[wheel].getSpeed() < -5.0){
         Serial.println("Levi motor se pravilno vrti nazaj.");
         rez = 1;
       }
     }
   }
-  robot.motor[LEFT].setVoltage(0);
+  robot.motor[wheel].setVoltage(0); //nastavi hitrost motorja na 0
   Serial.println();
 }
 
@@ -381,46 +382,47 @@ void Test::distance(){
 */
 void Test::line(){
   while(!Serial);
-  delay(100);
+  delay(10);
   //kalibracija senzorjev
   Serial.println("Kalibracija traja 5s. Začne in konča se s piskom.");
   Serial.println("Pritisni gumb za začetek.");
   Serial.println();
-  while(!robot.buttonPressed());
-  delay(500);
+  while(!robot.buttonPressed()); //caka na uporabnika
+  delay(1000); //debouncing
   Serial.println("START kalibracije");
-  robot.beep(200,500); //pisk za konec kalibracije
-  robot.line.calibrate(5000);
+  robot.beep(200,500); //pisk za zacetek kalibracije
+  robot.line.calibrate(5000); //kalibracija 5000 ms
   robot.beep(200,500); //pisk za konec kalibracije
   Serial.println("KONEC kalibracije");
-  delay(500);
+  delay(10);
+  Serial.println();
   Serial.println("Pritisni gumb za nadaljevanje testa.");
-  while(!robot.buttonPressed());
+  while(!robot.buttonPressed()); //caka na uporabnika
   delay(1000); //debouncing
   Serial.println();
   Serial.println("Črto daj pod SREDINO robota.");
-  while(!robot.buttonPressed()){
-    if (abs(robot.line.getPosition() * 100) < 1.0){
+  while(!robot.buttonPressed()){ //ce uporabnik pritisne gumb, prekine ta del testa
+    if (abs(robot.line.getPosition() * 100) < 1.0){ //ce je crta manj kot 1 cm od sredine robota
       Serial.println("--- OK ---");
       robot.beep(500,300);
       break;
     }
   }
-  delay(1000);
+  delay(10);
   Serial.println();
   Serial.println("Črto daj pod LEVO stran robota.");
-  while(!robot.buttonPressed()){
-    if ((robot.line.getPosition() * 100) < -2.5){
+  while(!robot.buttonPressed()){ //ce uporabnik pritisne gumb, prekine ta del testa
+    if ((robot.line.getPosition() * 100) < -2.5){ //ce je crta dlje kot 2,5 cm od sredine robota proti levi
       Serial.println("--- OK ---");
       robot.beep(500,300);
       break;
     }
   }
-  delay(1000);
+  delay(10);
   Serial.println();
   Serial.println("Črto daj pod DESNO stran robota.");
-  while(!robot.buttonPressed()){
-    if ((robot.line.getPosition() * 100) > 2.5){
+  while(!robot.buttonPressed()){ //ce uporabnik pritisne gumb, prekine ta del testa
+    if ((robot.line.getPosition() * 100) > 2.5){ //ce je crta dlje kot 2,5 cm od sredine robota proti desni
       Serial.println("--- OK ---");
       robot.beep(500,300);
       break;
