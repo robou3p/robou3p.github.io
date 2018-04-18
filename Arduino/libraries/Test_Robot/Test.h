@@ -8,13 +8,10 @@
 
 #include "Arduino.h"
 #include "Robot.h"
-#include "Motor.h"
-#include "MPU9250.h"
-#include "Line.h"
-#include "Distance.h"
-#include <avr/interrupt.h>
-#include <math.h>
-#include "Wire.h"
+//#include "Motor.h"
+//#include "MPU9250.h"
+//#include "Line.h"
+//#include "Distance.h"
 
 #define duration1000ms 1000 //casovnik dolzine 1000ms
 
@@ -24,7 +21,6 @@ class Test
     //klic funkcije v Arduino IDE okolju je npr.: test.battery();
     void battery();
     void motor(char LR);
-    void rightMotor();
     void buzzer();
     void temp();
     void mag();

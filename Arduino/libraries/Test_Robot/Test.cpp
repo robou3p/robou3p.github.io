@@ -4,16 +4,18 @@
   Released into the public domain.
 */
 
-#include "Arduino.h"
-#include "Robot.h"
 #include "Test.h"
-#include "Motor.h"
-#include "MPU9250.h"
-#include "Line.h"
-#include "Distance.h"
-#include <avr/interrupt.h>
-#include <math.h>
-#include "Wire.h"
+//#include "Arduino.h"
+//#include "Robot.h"
+//#include "Motor.h"
+// #include "MPU9250.h"
+// #include "Line.h"
+// #include "Distance.h"
+
+Test::Test(){
+  robot.imu.setup();
+  Serial.println("robot.imu.setup se je izvedel.");
+}
 
 Test test = Test();
 
@@ -43,7 +45,7 @@ void Test::motor(char LR){
     wheel = 1;
   }
   else {
-    Serial.println("Napačen vhodni prarameter funkcije. Izberi med 'L' ali 'R'.");
+    Serial.println("Napačen vhodni prarameter funkcije. Vpiši 'L' ali 'R'.");
     return;
   }
   while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
@@ -91,46 +93,6 @@ void Test::motor(char LR){
   robot.motor[LEFT].setVoltage(0);
   Serial.println();
 }
-
-/*
-  Izpise ali desni motor deluje pravilno ali ne.
-*/
-/*
-void Test::rightMotor(){
-  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
-  Serial.println("Za začetek testa DESNEGA MOTORJA, dvignite robota v zrak in pritisnite gumb (tisti, ki NI zraven USB kabla)!");
-  Serial.println();
-  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
-  Serial.println("/////////////////////////");
-  Serial.println("Če želite prekiniti test, pritisnite gumb.");
-  delay(2000); //zakasnitev, da debouncing
-  float U = 4.0;
-  int rez = 0;
-  while (!rez){
-    if (robot.buttonPressed()){
-      break;
-    }
-    robot.motor[RIGHT].setVoltage(U);
-    delay(1000);
-    if (robot.motor[RIGHT].getSpeed() == 0.0){
-      Serial.println("Enkoderji ne delujejo. Funkcija robot.motor[RIGHT].getSpeed() vrača 0.00");
-      delay(5);
-      break;
-    }
-    if (robot.motor[RIGHT].getSpeed() > 5.0){
-      Serial.println("Desni motor se pravilno vrti naprej.");
-      robot.motor[RIGHT].setVoltage(-U);
-      delay(1000);
-      if (robot.motor[RIGHT].getSpeed() < -5.0){
-        Serial.println("Desni motor se pravilno vrti nazaj.");
-        rez = 1;
-      }
-    }
-  }
-  robot.motor[RIGHT].setVoltage(0);
-  Serial.println();
-}
-*/
 
 /*
   Vklopi brencac za 5 sekund.
