@@ -5,9 +5,9 @@
 #include "Motor.h"
 #include "Line.h"
 #include "Distance.h"
-#include "MPU9250.h"
-#include "Filters.h"
-#include "Util.h"
+//#include "MPU9250.h"
+//#include "Filters.h"
+//#include "Util.h"
 #include <avr/interrupt.h>
 #include <math.h>
 #include "Wire.h"
@@ -48,8 +48,8 @@ public:
   Motor motor[2] = {Motor(AIN1, AIN2, MAI, ENCAD), Motor(BIN1, BIN2, MBI, ENCBD)};
   Line line = Line(MUXL0, MUXL1, MUXL2, LFLED, LFSEN);
   Distance distance = Distance(MUXL0, MUXL1, MUXL2, MMLED, MMSEN);
-  MPU9250 imu = MPU9250(Wire, 0x68);
-  Filters filters;
+  //MPU9250 imu = MPU9250(Wire, 0x68);
+  //Filters filters;
 
 private:
   void setupEncoders();
