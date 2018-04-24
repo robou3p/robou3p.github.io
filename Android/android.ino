@@ -9,7 +9,6 @@ void loop() {
   if (Serial1.available()) {
     switch (Serial1.read()) {
       case ('L'): {
-
           while (!Serial1.available()) {}
           int dirLeft = Serial1.read();
           while (!Serial1.available()) {}
@@ -26,7 +25,6 @@ void loop() {
           break;
         }
       case ('R'): {
-
           while (!Serial1.available()) {}
           int dirRight = Serial1.read();
           while (!Serial1.available()) {}
