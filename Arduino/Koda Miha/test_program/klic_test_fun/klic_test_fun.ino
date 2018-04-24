@@ -1,25 +1,23 @@
-//#include <Robot.h>
+#include <Robot.h>
 #include <Test.h>
 
 void setup() {
   while (!Serial);
-  Serial.println("Zapuscas setup, pritisni gumb na robotu za nadaljevanje!");
+  Serial.println("Zapuscas setup!");
 }
 
 void loop() {
   if(robot.buttonPressed()){
-    delay(500);
-    //test.battery();
-    //Serial.println(robot.motor[LEFT].getSpeed());
-    //test.motor('L');
-    //test.rightMotor();
-    //test.buzzer();
+    test.battery();
+    test.motor('R');
+    test.buzzer();
+    test.distance();
+    test.line();
+    //To spodaj ne deluje z 2. verzijo robota
     //test.temp();
     //test.mag();
     //test.accel();
     //test.gyro();
-    //test.distance();
-    test.line();
   }
 
   delay(100);
