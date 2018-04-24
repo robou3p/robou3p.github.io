@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="@dimen/showcase_view_width"
+    android:layout_height="@dimen/showcase_view_height"
+    android:layout_marginTop="100dp"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/showcase_text_size_title"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:text="Uporaba senzorja" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/showcase_text_size_detail"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:text="Robota lahko upravljaš tudi s pospeškomerom telefona!\n\nS klikom na gumb aktiviraš senzor - ne pozabi pa najprej senzor kalibrirati.\n\n Senzor lahko s klikom na isti gumb tudi izklopiš." />
+</LinearLayout>

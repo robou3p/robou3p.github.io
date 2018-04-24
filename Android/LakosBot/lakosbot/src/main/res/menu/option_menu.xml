@@ -6,16 +6,20 @@
     <item
         android:id="@+id/connect"
         android:icon="@drawable/ic_bluetooth_searching_white"
-        android:title="Connect to robot..."
+        android:title="Poveži se z robotom..."
         app:showAsAction="never" />
     <item
         android:id="@+id/calibrate"
         android:icon="@drawable/ic_screen_rotation_white"
-        android:title="Start phone calibration"
+        android:title="Kalibriraj senzor telefona"
         app:showAsAction="never" />
     <item
         android:id="@+id/rotate"
-        android:title="Rotate screen"
+        android:title="Obrni zaslon"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/intro"
+        android:title="Prikaži uvod"
         app:showAsAction="never" />
 
 </menu>

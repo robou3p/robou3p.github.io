@@ -4,4 +4,9 @@
     <dimen name="base_size">280dp</dimen>
     <dimen name="stick_size">90dp</dimen>
     <dimen name="activity_padding">8dp</dimen>
+    <dimen name="showcase_view_width">250dp</dimen>
+    <dimen name="showcase_view_height">350dp</dimen>
+    <dimen name="showcase_view_margin_horizontal">40dp</dimen>
+    <dimen name="showcase_text_size_title">30sp</dimen>
+    <dimen name="showcase_text_size_detail">16sp</dimen>
 </resources>

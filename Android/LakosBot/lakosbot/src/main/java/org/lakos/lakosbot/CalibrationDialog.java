@@ -70,23 +70,23 @@ public class CalibrationDialog extends DialogFragment {
         switch (currentState) {
             case C_NEUTRAL:
                 vectors[C_NEUTRAL] = new Vector(sensorListener.getCurrentVector());
-                textViewCalibrationDialog.setText("Position FORWARD and press NEXT");
+                textViewCalibrationDialog.setText("Drži v poziciji za VOŽNJO NAPREJ in pritisni NAPREJ");
                 break;
             case C_FORWARD:
                 vectors[C_FORWARD] = new Vector(sensorListener.getCurrentVector().subtract(sensorListener.getNeutralVector()));
-                textViewCalibrationDialog.setText("Position BACKWARD and press NEXT");
+                textViewCalibrationDialog.setText("Drži v poziciji za VOŽNJO NAZAJ in pritisni NAPREJ");
                 break;
             case C_BACKWARD:
                 vectors[C_BACKWARD] = new Vector(sensorListener.getCurrentVector().subtract(sensorListener.getNeutralVector()));
-                textViewCalibrationDialog.setText("Position LEFT and press NEXT");
+                textViewCalibrationDialog.setText("Drži v poziciji za ZAVIJANJE LEVO in pritisni NAPREJ");
                 break;
             case C_LEFT:
                 vectors[C_LEFT] = new Vector(sensorListener.getCurrentVector().subtract(sensorListener.getNeutralVector()));
-                textViewCalibrationDialog.setText("Position RIGHT and press NEXT");
+                textViewCalibrationDialog.setText("Drži v poziciji za ZAVIJANJE DESNO in pritisni NAPREJ");
                 break;
             case C_RIGHT:
                 vectors[C_RIGHT] = new Vector(sensorListener.getCurrentVector().subtract(sensorListener.getNeutralVector()));
-                textViewCalibrationDialog.setText("Calibration finished");
+                textViewCalibrationDialog.setText("Kalibracija končana");
                 break;
             case C_FINISH:
                 dismiss();
@@ -112,7 +112,7 @@ public class CalibrationDialog extends DialogFragment {
         currentState = C_NEUTRAL;
         vectors = new Vector[5];
         sensorListener = new SensorListener();
-        textViewCalibrationDialog.setText("Position NEUTRAL and press NEXT");
+        textViewCalibrationDialog.setText("Drži v NEVTRALNI (ZAČETNI) poziciji in pritisni NAPREJ");
         progressBarCalibrationDialog.setProgress(0);
 
         return v;

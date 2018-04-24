@@ -22,6 +22,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -46,6 +47,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import es.dmoral.toasty.Toasty;
+import me.toptas.fancyshowcase.FancyShowCaseQueue;
+import me.toptas.fancyshowcase.FancyShowCaseView;
+import me.toptas.fancyshowcase.FocusShape;
 
 import static org.lakos.lakosbot.BluetoothConnectionThread.BTC_CLOSE;
 import static org.lakos.lakosbot.BluetoothConnectionThread.BTC_CREATE;
@@ -68,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     // Bound resources
     @BindColor(R.color.colorActivateButtonGreen) int colorActivateButtonGreen;
     @BindColor(R.color.colorActivateButtonRed) int colorActivateButtonRed;
+    @BindColor(R.color.colorShowcaseBackground) int colorShowcaseBackground;
+    @BindColor(R.color.colorShowcaseBorder) int colorShowcaseBorder;
 
     @BindDrawable(R.drawable.joystick_button_disabled) Drawable drawableJoystickButtonDisabled;
     @BindDrawable(R.drawable.joystick_button_enabled) Drawable drawableJoystickButtonEnabled;
@@ -210,13 +216,15 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
         // Initialize and ask for bluetooth
         // Initialize accelerometer sensor
-        initBluetooth();
+        //initBluetooth();
 
         initAccelerometer();
 
         initMagnetometer();
 
         initJoystick();
+
+        initShowcase();
 
         // Initialize a handler with seperate thread that will be sending messages to robot
         messageSenderHandler = new Handler();
@@ -256,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         super.onDestroy();
         sensorManager.unregisterListener(sensorListener);
         if(btConnectionThread != null) btConnectionThread.cancel();
-        bluetoothAdapter.disable();
+        if(bluetoothAdapter != null) bluetoothAdapter.disable();
     }
 
     private void setActionBarSubtitle(String subtitle) {
@@ -271,10 +279,10 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
         // If the adapter is null, then Bluetooth is not supported
         if (bluetoothAdapter == null) {
-            Toasty.error(this, "Bluetooth is not available!").show();
-            finish();
+            Toasty.error(this, "Bluetooth is not available on this device.").show();
+            //finish();
+            return;
         }
-
         // If BT is not on, request that it be enabled.
         if (!bluetoothAdapter.isEnabled()) {
             Intent enableIntent = new Intent(
@@ -404,16 +412,70 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         });
     }
 
+    private void initShowcase() {
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+        FancyShowCaseView sc1 = new FancyShowCaseView.Builder(this)
+                .focusRectAtPosition(200, 100, 800, 250)
+                .backgroundColor(colorShowcaseBackground)
+                .focusBorderColor(colorShowcaseBorder)
+                .focusBorderSize(10)
+                .customView(R.layout.showcase_1_bt, null)
+                .showOnce("sc1")
+                .build();
+
+        FancyShowCaseView sc2 = new FancyShowCaseView.Builder(this)
+                .focusCircleAtPosition(width - 75, 75, 100)
+                .backgroundColor(colorShowcaseBackground)
+                .focusBorderColor(colorShowcaseBorder)
+                .focusBorderSize(10)
+                .customView(R.layout.showcase_2_menu, null)
+                .showOnce("sc2")
+                .build();
+
+        FancyShowCaseView sc3 = new FancyShowCaseView.Builder(this)
+                .focusOn(joystick)
+                .backgroundColor(colorShowcaseBackground)
+                .focusBorderColor(colorShowcaseBorder)
+                .focusBorderSize(10)
+                .customView(R.layout.showcase_3_joystick, null)
+                .showOnce("sc3")
+                .build();
+
+        FancyShowCaseView sc4 = new FancyShowCaseView.Builder(this)
+                .focusOn(buttonActivate)
+                .focusShape(FocusShape.ROUNDED_RECTANGLE)
+                .backgroundColor(colorShowcaseBackground)
+                .focusBorderColor(colorShowcaseBorder)
+                .focusBorderSize(10)
+                .customView(R.layout.showcase_4_sensor, null)
+                .showOnce("sc4")
+                .build();
+
+        FancyShowCaseQueue fq = new FancyShowCaseQueue()
+                .add(sc1)
+                .add(sc2)
+                .add(sc3)
+                .add(sc4);
+
+        fq.show();
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case REQUEST_ENABLE_BT:
                 // When the request to enable Bluetooth returns
                 if (resultCode == Activity.RESULT_OK) {
-                    Toasty.normal(this, "Bluetooth enabled. Use \"Connect to robot...\" from the menu to start.", Toast.LENGTH_LONG).show();
+                    Toasty.normal(this, "Bluetooth je vključen. V meniju izberi \"Poveži se z robotom...\" za začetek.", Toast.LENGTH_LONG).show();
                 } else {
                     // User did not enable Bluetooth or an error occured
-                    Toasty.error(this, "Bluetooth was not enabled!").show();
+                    Toasty.error(this, "Bluetooth ni bil vključen!").show();
                     finish();
                 }
         }
@@ -450,6 +512,10 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                 else
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 return true;
+            case R.id.intro:
+                FancyShowCaseView.resetAllShowOnce(this);
+                initShowcase();
+                return true;
         }
         return false;
     }
@@ -477,7 +543,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         dialogBuilder
-                .setTitle("Select a device")
+                .setTitle("Izberi robota")
                 .setIcon(R.drawable.ic_bluetooth_searching_black);
 
         dialogBuilder.setSingleChoiceItems(deviceListAdapter, -1, new DialogInterface.OnClickListener() {
@@ -488,7 +554,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         });
 
         dialogBuilder
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Poveži", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int pos = deviceListAdapter.getSelectedPosition();
@@ -501,7 +567,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                         }
                     }
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton("Prekini", null)
                 .setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialog) {
@@ -509,7 +575,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                     }
                 });
 
-        Toasty.info(this, "Newly found devices will appear at the bottom of the list.").show();
+        Toasty.info(this, "Novo najdene naprave se bodo pokazale na dnu seznama.").show();
         dialogBuilder.show();
     }
 
@@ -527,7 +593,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     }
 
     private void stopBluetoothDiscovery() {
-        if(bluetoothAdapter.isDiscovering()) {
+        if(bluetoothAdapter != null && bluetoothAdapter.isDiscovering()) {
             bluetoothAdapter.cancelDiscovery();
             Log.d(TAG, "Device discovery stopped.");
         }
@@ -543,7 +609,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
             btConnectionThread = new BluetoothConnectionThread(this, bluetoothAdapter, device);
             btConnectionThread.start();
         } else {
-            Toasty.info(this, "Connection already established.").show();
+            Toasty.info(this, "Povezava je že vzpostavljena.").show();
         }
     }
 
@@ -562,7 +628,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         for(int i=0; i<5; i++) {
             if(vectors[i] == null) {
                 Log.d(TAG, "Calibration was not completed!");
-                Toasty.warning(this, "Calibration was cancelled!").show();
+                Toasty.warning(this, "Kalibracija je bila prekinjena!").show();
                 return;
             }
         }

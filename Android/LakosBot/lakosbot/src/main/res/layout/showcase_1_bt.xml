@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="@dimen/showcase_view_width"
+    android:layout_height="@dimen/showcase_view_height"
+    android:layout_marginTop="100dp"
+    android:layout_marginStart="@dimen/showcase_view_margin_horizontal">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/showcase_text_size_title"
+        android:textColor="@color/colorWhite"
+        android:text="Stanje Bluetootha" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/showcase_text_size_detail"
+        android:textColor="@color/colorWhite"
+        android:text="Tukaj lahko vidiš trenutno stanje Bluetootha.\n\nKo se povežeš z robotom, se bo tu prikazalo ime robota, s katerim si povezan." />
+</LinearLayout>
