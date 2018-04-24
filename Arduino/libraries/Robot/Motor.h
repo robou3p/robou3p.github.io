@@ -33,7 +33,7 @@ public:
 private:
   float diameter = 0.032;
   float voltage = 0.0;
-  volatile float speed = 0.0;  //added volatile for testing on 18.4.2018 by MK
+  volatile float speed = 0.0;  //added volatile for testing
   float current = 0.0;
   float distance = 0.0;
   float kp = 0.15;
