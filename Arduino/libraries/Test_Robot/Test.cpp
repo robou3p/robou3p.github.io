@@ -13,26 +13,10 @@
 // #include "Distance.h"
 
 Test::Test(){
-  robot.imu.setup();
-  Serial.println("robot.imu.setup se je izvedel.");
+  //robot.imu.begin();
 }
 
 Test test = Test();
-
-/*
-  Izpise napetost baterije v [V].
-*/
-void Test::battery(){
-  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
-  if (robot.battery() == 0.0){ //ce je napetost baterije enaka 0.0 opozori uporabnika in konca test
-    Serial.println("Napaka! Baterija ni vstavljena.");
-    return;
-  }
-  Serial.print("Baterija ima ");
-  Serial.print(robot.battery()); //prebere napetost baterije v [V]
-  Serial.println("V napetosti.");
-  Serial.println();
-}
 
 /*
   Izpise ali motor deluje pravilno ali ne.
@@ -50,7 +34,7 @@ void Test::motor(char LR){
   }
 
   while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
-  Serial.println("Za začetek testa LEVEGA MOTORJA, dvignite robota v zrak in pritisnite gumb (tisti, ki NI zraven USB kabla)!");
+  Serial.println("Za začetek testa dvignite robota v zrak in pritisnite gumb (tisti, ki NI zraven USB kabla)!");
   Serial.println();
   while (!robot.buttonPressed()); //caka uporabnika
   Serial.println("/////////////////////////");
@@ -62,229 +46,25 @@ void Test::motor(char LR){
     if (robot.buttonPressed()){ //preveri ali uporabnik zeli prekiniti izvajanje testa
       break;
     }
-    robot.motor[wheel].setVoltage(U); //nastavi napetost motorja
+    robot.motor[wheel].setSpeed(U); //nastavi napetost motorja
     delay(1000);
 
-
-
-
-    //TO JE DODANO SAMO ZA ODPRAVLJANJE NAPAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    Serial.println(robot.motor[wheel].getSpeed());  //NE DELA
-    Serial.println(robot.motor[wheel].getVoltage());  //DELA
-    //
-
-
-
-
-    if (robot.motor[wheel].getSpeed() == 0.0){
-      Serial.println("Enkoderji ne delujejo. Funkcija robot.motor[LEFT].getSpeed() vrača 0.00");
+    if (robot.motor[wheel].getVoltage() == 0.0){
+      Serial.println("Enkoderji ne delujejo. Funkcija robot.motor[].getVoltage() vrača 0.00");
       delay(5);
       break;
     }
-    if (robot.motor[wheel].getSpeed() > 5.0){
+    if (robot.motor[wheel].getVoltage() > 3.0){
       Serial.println("Levi motor se pravilno vrti naprej.");
       robot.motor[wheel].setVoltage(-U);
       delay(1000);
-      if (robot.motor[wheel].getSpeed() < -5.0){
+      if (robot.motor[wheel].getVoltage() < -3.0){
         Serial.println("Levi motor se pravilno vrti nazaj.");
         rez = 1;
       }
     }
   }
   robot.motor[wheel].setVoltage(0); //nastavi hitrost motorja na 0
-  Serial.println();
-}
-
-/*
-  Vklopi brencac za 5 sekund.
-*/
-void Test::buzzer(){
-  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
-  Serial.println("Za začetek testa BRENČAČA pritisnite gumb na desni strani robota (tisti, ki NI zraven USB kabla)!");
-  Serial.println();
-  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
-  Serial.println("Robot bo piskal 5 sekund. Če želite prekiniti test, pritisnite gumb.");
-  delay(2000); //zakasnitev, da debouncing
-  int16_t frequency = 500; //frekvenca brencaca
-  int16_t timeBuzzerON = 100; //koliko casa je prizgan brencac
-  int16_t error = 0; //ali je uporabnik pritisnil gumb za prekinitev
-  uint32_t tStart1 = millis();
-  uint32_t tStart2;
-  do {
-    robot.beep(frequency, timeBuzzerON); //prizge brencac
-    tStart2 = millis();
-    do{
-      if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
-        error = 1;
-        Serial.println("Prekinili ste test!");
-        break;
-      }
-    } while (millis() < tStart2 + duration1000ms/10); //100ms je tiho brencac
-    if (error) break;
-    if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
-        Serial.println("Prekinili ste test!");
-        break;
-      }
-  } while (millis() < tStart1 + duration1000ms*5); //brencac deluje 5s
-  Serial.println();
-}
-
-/*
-  Enkrat izpiše temperaturo v enoti [C].
-*/
-void Test::temp(){
-  robot.imu.readSensor();
-  float T = robot.imu.getTemperature_C();
-  if (T == 0.0){ //ce je temperatura enaka 0.0 opozori uporabnika in konca test
-    Serial.println("Napaka! Senzor za temperaturo ne deluje.");
-    return;
-  }
-  Serial.print("Temperatura je: ");
-  Serial.print(T);
-  Serial.println(" C");
-}
-
-/*
-  Enkrat izpiše magnetno polje v X,Y,Z smeri v enoti [uT].
-*/
-void Test::mag(){
-  robot.imu.readSensor();
-  float magX = robot.imu.getMagX_uT();
-  float magY = robot.imu.getMagY_uT();
-  float magZ = robot.imu.getMagZ_uT();
-  if (magX + magY + magZ == 0.0){ //ce je vsota v vseh 3eh smereh enaka 0.0 opozori uporabnika in konca test
-    Serial.println("Napaka! Meritve v vseh treh smereh so enake 0.00 [uT].");
-    return;
-  }
-  Serial.print("Magnetno polje v uT je: ");
-  Serial.print("X=");
-  Serial.print((int)floor(magX));
-  Serial.print("  Y=");
-  Serial.print((int)floor(magY));
-  Serial.print("  Z=");
-  Serial.println((int)floor(magZ));
-}
-
-/*
-  Preveri ali je pospešek v X,Y,Z smeri večji od praga. Enote so [m/s2].
-*/
-void Test::accel(){
-  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
-  Serial.println("Za začetek testa POSPEŠKOMETRA pritisnite gumb na desni strani robota (tisti, ki NI zraven USB kabla)!");
-  Serial.println();
-  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
-  Serial.println("/////////////////////////");
-  Serial.println("Robota primite v roke in ga premikajte v vseh 3eh smereh, dokler ne izpiše Test končan.");
-  Serial.println("Če želite prekiniti test, pritisnite gumb.");
-  delay(3000); //zakasnitev, da debouncing
-
-  int tmpX, tmpY, tmpZ = 0;
-  float prag = 11.0; //nastavi prag obcutljivosti [m/s2], ki ga mora senzor preseci, da opravi test
-  int16_t error = 0; //ali je uporabnik pritisnil gumb za prekinitev
-  uint32_t tStart1;
-
-  while (!robot.buttonPressed()) {
-    robot.imu.readSensor();
-    float accelX = robot.imu.getAccelX_mss();
-    float accelY = robot.imu.getAccelY_mss();
-    float accelZ = robot.imu.getAccelZ_mss();
-
-    if (accelX + accelY + accelZ == 0.0){ //ce je vsota v vseh 3eh smereh enaka 0.0 opozori uporabnika in konca test
-      Serial.println("Napaka! Meritve v vseh treh smereh so enake 0.00 [m/s2].");
-      break;
-    }
-    //ce je bil v doloceni smeri ze presezen prag, se ta smer neha izpisovati
-    if (!tmpX){
-      Serial.print("X=");
-      Serial.print(accelX);
-    }
-    if (!tmpY){
-      Serial.print("  Y=");
-      Serial.print(accelY);
-    }
-    if (!tmpZ){
-      Serial.print("  Z=");
-      Serial.print(accelZ);
-    }
-
-    if (abs(accelX) > prag) tmpX = 1; //preveri ce je zaznano gibanje mocnejse od paga
-    if (abs(accelY) > prag) tmpY = 1;
-    if (abs(accelZ) > prag) tmpZ = 1;
-    if (tmpX && tmpY && tmpZ){ //ce je zaznano gibanje v vseh 3eh smereh opozori uporabnika in konca test
-      Serial.println("Pospeškometer deluje!  Test zaključen.");
-      break;
-    }
-    tStart1 = millis();
-    do{
-      if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
-        error = 1;
-        Serial.println("Prekinili ste test!");
-        break;
-      }
-    } while (millis() < tStart1 + duration1000ms/5); //delay za 200ms zaradi stabilnosti delovanja
-    if (error) break;
-  }
-  Serial.println();
-}
-
-/*
-  Preveri ali je premik v X,Y,Z smeri večji od praga. Enote so [rad/s].
-*/
-void Test::gyro(){
-  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
-  Serial.println("Za začetek testa ŽIROSKOPA pritisnite gumb na desni strani robota (tisti, ki NI zraven USB kabla)!");
-  Serial.println("Če so meritve v vseh treh smereh ob premikanju enake 0.00, senzor ne deluje pravilno.");
-  Serial.println();
-  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
-  Serial.println("/////////////////////////");
-  Serial.println("Robota primite v roke in ga premikajte v vseh 3eh smereh, dokler ne izpiše Test končan.");
-  Serial.println("Če želite prekiniti test, pritisnite gumb.");
-  delay(3000); //zakasnitev, da debouncing
-
-  int tmpX, tmpY, tmpZ = 0;
-  float prag = 1.0; //nastavi prag obcutljivosti [rad/s], ki ga mora senzor preseci, da opravi test
-  int16_t error = 0; //ali je uporabnik pritisnil gumb za prekinitev
-  uint32_t tStart1;
-
-  while(!robot.buttonPressed()){
-    robot.imu.readSensor();
-    float gyroX = robot.imu.getGyroX_rads();
-    float gyroY = robot.imu.getGyroY_rads();
-    float gyroZ = robot.imu.getGyroZ_rads();
-
-    Serial.print("X=");
-    Serial.print(gyroX);
-    //ce je bil v doloceni smeri ze presezen prag, se ta smer neha izpisovati
-    if (!tmpX){
-      Serial.print("X=");
-      Serial.print(gyroX);
-    }
-    if (!tmpY){
-      Serial.print("  Y=");
-      Serial.print(gyroY);
-    }
-    if (!tmpZ){
-      Serial.print("  Z=");
-      Serial.print(gyroZ);
-    }
-
-    if (abs(gyroX) > prag) tmpX = 1; //preveri ce je zaznano gibanje mocnejse od paga
-    if (abs(gyroY) > prag) tmpY = 1;
-    if (abs(gyroZ) > prag) tmpZ = 1;
-    if (tmpX && tmpY && tmpZ){ //ce je zaznano gibanje v vseh 3eh smereh opozori uporabnika in konca test
-      Serial.println("Žiroskop deluje!  Test zaključen.");
-      break;
-    }
-    tStart1 = millis();
-    do{
-      if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
-        error = 1;
-        Serial.println("Prekinili ste test!");
-        break;
-      }
-    } while (millis() < tStart1 + duration1000ms/5); //delay za 200ms
-    if (error) break;
-  }
   Serial.println();
 }
 
@@ -306,15 +86,15 @@ void Test::distance(){
     error = error + low[i];
   }
   if (error == 0){ //ce je vsota vseh meritev enaka 0.0 opozori uporabnika in konca test
-    Serial.println("Napaka! Meritve v vseh treh smereh so enake 0.00 [m/s2].");
+    Serial.println("Napaka! Meritve vseh senzorjev so enake 0. Senzorji ne delujejo");
     return;
   }
   delay(5);
-  //sedaj preverjas ce so se vrednosti spremenile in jih prepises ce zadostijo pogoju
-  //to delas dokler uporabnik ne pritisne gumba na robotu
   Serial.println("Ko so ovire odstranjene, pritisni gumb na robotu za nadaljevanje.");
   Serial.println();
   delay(5);
+  //sedaj preverjas ce so se vrednosti spremenile in jih prepises ce zadostijo pogoju
+  //to delas dokler uporabnik ne pritisne gumba na robotu
   while (!robot.buttonPressed()){
     robot.distance.readRaw();
     for (int i = 0; i < 6; i++){
@@ -382,7 +162,7 @@ void Test::distance(){
 */
 void Test::line(){
   while(!Serial);
-  delay(10);
+  delay(1000);
   //kalibracija senzorjev
   Serial.println("Kalibracija traja 5s. Začne in konča se s piskom.");
   Serial.println("Pritisni gumb za začetek.");
@@ -434,3 +214,217 @@ void Test::line(){
   Serial.println();
   delay(10);
 }
+
+/*
+  Vklopi brencac za 5 sekund.
+*/
+void Test::buzzer(){
+  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
+  Serial.println("Za začetek testa BRENČAČA pritisnite gumb na desni strani robota (tisti, ki NI zraven USB kabla)!");
+  Serial.println();
+  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
+  Serial.println("Robot bo piskal 5 sekund. Če želite prekiniti test, pritisnite gumb.");
+  delay(2000); //zakasnitev, da debouncing
+  int16_t frequency = 500; //frekvenca brencaca
+  int16_t timeBuzzerON = 100; //koliko casa je prizgan brencac
+  int16_t error = 0; //ali je uporabnik pritisnil gumb za prekinitev
+  uint32_t tStart1 = millis();
+  uint32_t tStart2;
+  do {
+    robot.beep(frequency, timeBuzzerON); //prizge brencac
+    tStart2 = millis();
+    do{
+      if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
+        error = 1;
+        Serial.println("Prekinili ste test!");
+        break;
+      }
+    } while (millis() < tStart2 + duration1000ms/10); //100ms je tiho brencac
+    if (error) break;
+    if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
+        Serial.println("Prekinili ste test!");
+        break;
+      }
+  } while (millis() < tStart1 + duration1000ms*5); //brencac deluje 5s
+  Serial.println();
+}
+
+/*
+  Izpise napetost baterije v stavku.
+*/
+void Test::battery(){
+  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
+  if (robot.battery() == 0.0){ //ce je napetost baterije enaka 0.0 opozori uporabnika in konca test
+    Serial.println("Napaka! Baterija ni vstavljena.");
+    Serial.println();
+    return;
+  }
+  Serial.print("Baterija ima ");
+  Serial.print(robot.battery()); //prebere napetost baterije v [V]
+  Serial.println("V napetosti.");
+  Serial.println();
+}
+
+/*
+  Enkrat izpiše temperaturo v enoti [C].
+*/
+/*
+void Test::temp(){
+  robot.imu.readSensor();
+  float T = robot.imu.getTemperature_C();
+  if (T == 0.0){ //ce je temperatura enaka 0.0 opozori uporabnika in konca test
+    Serial.println("Napaka! Senzor za temperaturo ne deluje.");
+    return;
+  }
+  Serial.print("Temperatura je: ");
+  Serial.print(T);
+  Serial.println(" C");
+}
+*/
+/*
+  Enkrat izpiše magnetno polje v X,Y,Z smeri v enoti [uT].
+*/
+/*
+void Test::mag(){
+  robot.imu.readSensor();
+  float magX = robot.imu.getMagX_uT();
+  float magY = robot.imu.getMagY_uT();
+  float magZ = robot.imu.getMagZ_uT();
+  if (magX + magY + magZ == 0.0){ //ce je vsota v vseh 3eh smereh enaka 0.0 opozori uporabnika in konca test
+    Serial.println("Napaka! Meritve v vseh treh smereh so enake 0.00 [uT].");
+    return;
+  }
+  Serial.print("Magnetno polje v uT je: ");
+  Serial.print("X=");
+  Serial.print((int)floor(magX));
+  Serial.print("  Y=");
+  Serial.print((int)floor(magY));
+  Serial.print("  Z=");
+  Serial.println((int)floor(magZ));
+}
+*/
+/*
+  Preveri ali je pospešek v X,Y,Z smeri večji od praga. Enote so [m/s2].
+*/
+/*
+void Test::accel(){
+  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
+  Serial.println("Za začetek testa POSPEŠKOMETRA pritisnite gumb na desni strani robota (tisti, ki NI zraven USB kabla)!");
+  Serial.println();
+  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
+  Serial.println("/////////////////////////");
+  Serial.println("Robota primite v roke in ga premikajte v vseh 3eh smereh, dokler ne izpiše Test končan.");
+  Serial.println("Če želite prekiniti test, pritisnite gumb.");
+  delay(3000); //zakasnitev, da debouncing
+
+  int tmpX, tmpY, tmpZ = 0;
+  float prag = 11.0; //nastavi prag obcutljivosti [m/s2], ki ga mora senzor preseci, da opravi test
+  int16_t error = 0; //ali je uporabnik pritisnil gumb za prekinitev
+  uint32_t tStart1;
+
+  while (!robot.buttonPressed()) {
+    robot.imu.readSensor();
+    float accelX = robot.imu.getAccelX_mss();
+    float accelY = robot.imu.getAccelY_mss();
+    float accelZ = robot.imu.getAccelZ_mss();
+
+    if (accelX + accelY + accelZ == 0.0){ //ce je vsota v vseh 3eh smereh enaka 0.0 opozori uporabnika in konca test
+      Serial.println("Napaka! Meritve v vseh treh smereh so enake 0.00 [m/s2].");
+      break;
+    }
+    //ce je bil v doloceni smeri ze presezen prag, se ta smer neha izpisovati
+    if (!tmpX){
+      Serial.print("X=");
+      Serial.print(accelX);
+    }
+    if (!tmpY){
+      Serial.print("  Y=");
+      Serial.print(accelY);
+    }
+    if (!tmpZ){
+      Serial.print("  Z=");
+      Serial.print(accelZ);
+    }
+
+    if (abs(accelX) > prag) tmpX = 1; //preveri ce je zaznano gibanje mocnejse od paga
+    if (abs(accelY) > prag) tmpY = 1;
+    if (abs(accelZ) > prag) tmpZ = 1;
+    if (tmpX && tmpY && tmpZ){ //ce je zaznano gibanje v vseh 3eh smereh opozori uporabnika in konca test
+      Serial.println("Pospeškometer deluje!  Test zaključen.");
+      break;
+    }
+    tStart1 = millis();
+    do{
+      if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
+        error = 1;
+        Serial.println("Prekinili ste test!");
+        break;
+      }
+    } while (millis() < tStart1 + duration1000ms/5); //delay za 200ms zaradi stabilnosti delovanja
+    if (error) break;
+  }
+  Serial.println();
+}
+*/
+/*
+  Preveri ali je premik v X,Y,Z smeri večji od praga. Enote so [rad/s].
+*/
+/*
+void Test::gyro(){
+  while (!Serial); //nic se ne zgodi dokler ne odpres serial monitorja
+  Serial.println("Za začetek testa ŽIROSKOPA pritisnite gumb na desni strani robota (tisti, ki NI zraven USB kabla)!");
+  Serial.println("Če so meritve v vseh treh smereh ob premikanju enake 0.00, senzor ne deluje pravilno.");
+  Serial.println();
+  while (!robot.buttonPressed()); //caka na pritisk gumba za nadaljevanje programa
+  Serial.println("/////////////////////////");
+  Serial.println("Robota primite v roke in ga premikajte v vseh 3eh smereh, dokler ne izpiše Test končan.");
+  Serial.println("Če želite prekiniti test, pritisnite gumb.");
+  delay(3000); //zakasnitev, da debouncing
+
+  int tmpX, tmpY, tmpZ = 0;
+  float prag = 1.0; //nastavi prag obcutljivosti [rad/s], ki ga mora senzor preseci, da opravi test
+  int16_t error = 0; //ali je uporabnik pritisnil gumb za prekinitev
+  uint32_t tStart1;
+
+  while(!robot.buttonPressed()){
+    robot.imu.readSensor();
+    float gyroX = robot.imu.getGyroX_rads();
+    float gyroY = robot.imu.getGyroY_rads();
+    float gyroZ = robot.imu.getGyroZ_rads();
+
+    Serial.print("X=");
+    Serial.print(gyroX);
+    //ce je bil v doloceni smeri ze presezen prag, se ta smer neha izpisovati
+    if (!tmpX){
+      Serial.print("X=");
+      Serial.print(gyroX);
+    }
+    if (!tmpY){
+      Serial.print("  Y=");
+      Serial.print(gyroY);
+    }
+    if (!tmpZ){
+      Serial.print("  Z=");
+      Serial.print(gyroZ);
+    }
+
+    if (abs(gyroX) > prag) tmpX = 1; //preveri ce je zaznano gibanje mocnejse od paga
+    if (abs(gyroY) > prag) tmpY = 1;
+    if (abs(gyroZ) > prag) tmpZ = 1;
+    if (tmpX && tmpY && tmpZ){ //ce je zaznano gibanje v vseh 3eh smereh opozori uporabnika in konca test
+      Serial.println("Žiroskop deluje!  Test zaključen.");
+      break;
+    }
+    tStart1 = millis();
+    do{
+      if (robot.buttonPressed()){ //ce je pritisnjen gumb zakljuci test
+        error = 1;
+        Serial.println("Prekinili ste test!");
+        break;
+      }
+    } while (millis() < tStart1 + duration1000ms/5); //delay za 200ms
+    if (error) break;
+  }
+  Serial.println();
+}
+*/

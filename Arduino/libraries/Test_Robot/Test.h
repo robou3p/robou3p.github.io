@@ -19,6 +19,7 @@ class Test
 {
   public:
     //klic funkcije v Arduino IDE okolju je npr.: test.battery();
+    Test();
     void battery();
     void motor(char LR);
     void buzzer();
