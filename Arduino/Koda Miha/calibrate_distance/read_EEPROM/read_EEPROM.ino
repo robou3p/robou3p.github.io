@@ -6,7 +6,7 @@ void setup() {
   int eeAddress = 0; //EEPROM address to start reading from
   while (!Serial);
   
-  for (int i = 0; i < 6; i++){
+  for (int i = 0; i < 12; i++){
     //Get the float data from the EEPROM at position 'eeAddress'
     EEPROM.get(eeAddress, f);
     Serial.println(f, 3);    //This may print 'ovf, nan' if the data inside the EEPROM is not a valid float.
