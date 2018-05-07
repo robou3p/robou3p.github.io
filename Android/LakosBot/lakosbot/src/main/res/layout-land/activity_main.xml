@@ -28,7 +28,7 @@
             app:backgroundTint="@color/colorActivateButtonGreen"
             android:padding="10dp"
             android:layout_margin="10dp"
-            android:text="Start robot control" />
+            android:text="Začni upravljanje z nagibom" />
 
         <FrameLayout
             android:id="@+id/frameLayoutMain"

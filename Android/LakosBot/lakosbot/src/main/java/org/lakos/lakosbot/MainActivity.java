@@ -108,18 +108,18 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
             messageSenderHandler.post(messageSenderRunnable);
 
             buttonActivate.setSupportBackgroundTintList(ColorStateList.valueOf(colorActivateButtonRed));
-            buttonActivate.setText("Stop robot control");
+            buttonActivate.setText("Prekini upravljanje z nagibom");
 
             // disable joystick manual control
             joystick.setEnabled(false);
-            joystick.setJoystickButtonPosition(-0.75f, -0.25f); // test
+            joystick.setJoystickButtonPosition(0.0f, 0.0f); // test
             joystickButton.setBackground(drawableJoystickButtonDisabled);
         } else {
             // robot control with accelerometer has stopped!
             messageSenderHandler.removeCallbacks(messageSenderRunnable);
 
             buttonActivate.setSupportBackgroundTintList(ColorStateList.valueOf(colorActivateButtonGreen));
-            buttonActivate.setText("Start robot control");
+            buttonActivate.setText("Začni upravljanje z nagibom");
 
             // enable joystick manual control
             joystick.setEnabled(true);
@@ -151,8 +151,8 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
      * @param data should have 4 elements, in order: directionLeft, speedLeft, directionR, speedR
      */
     public void sendData(byte[] data) {
-        String dirLstr = data[0] == 0 ? "back" : "forw";
-        String dirRstr = data[2] == 0 ? "back" : "forw";
+        String dirLstr = data[0] == 0 ? "nazaj" : "naprej";
+        String dirRstr = data[2] == 0 ? "nazaj" : "naprej";
         textViewTest.setText(String.format(Locale.ENGLISH, "L: %3d %s\nD: %3d %s", data[1], dirLstr, data[3], dirRstr));
 
         if(btConnectionThread != null && robotControlActive) {
@@ -176,15 +176,15 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         @Override
         public void onReceive(Context context, Intent intent) {
             if(BTC_CLOSE.equals(intent.getAction())) {
-                setActionBarSubtitle("Not connected");
+                setActionBarSubtitle("Ni povezave z robotom");
                 activityMenu.getItem(0).setTitle("Connect to robot...");
             }
             else if(BTC_CREATE.equals(intent.getAction())) {
-                setActionBarSubtitle("Connecting...");
+                setActionBarSubtitle("Povezovanje...");
             }
             else if(BTC_START.equals(intent.getAction())) {
-                setActionBarSubtitle("Connected to: " + intent.getStringExtra("name"));
-                activityMenu.getItem(0).setTitle("Disconnect from " + intent.getStringExtra("name"));
+                setActionBarSubtitle("Povezan z robotom: " + intent.getStringExtra("name"));
+                activityMenu.getItem(0).setTitle("Prekini povezavo z: " + intent.getStringExtra("name"));
             }
         }
     };
@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
             Log.w(TAG, "Activity's Action bar is null!");
         } else {
             activityActionBar.setTitle("LakosBot");
-            setActionBarSubtitle("Not connected");
+            setActionBarSubtitle("Ni povezave z robotom");
         }
 
         textViewTest.setText("L:\nR:");
@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
         // If the adapter is null, then Bluetooth is not supported
         if (bluetoothAdapter == null) {
-            Toasty.error(this, "Bluetooth is not available on this device.").show();
+            Toasty.error(this, "Ta naprava ne podpira Bluetooth povezave.").show();
             //finish();
             return;
         }
@@ -421,7 +421,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         int height = metrics.heightPixels;
 
         FancyShowCaseView sc1 = new FancyShowCaseView.Builder(this)
-                .focusRectAtPosition(200, 100, 800, 250)
+                .focusRectAtPosition(200, 75, 800, 200)
                 .backgroundColor(colorShowcaseBackground)
                 .focusBorderColor(colorShowcaseBorder)
                 .focusBorderSize(10)
@@ -563,7 +563,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                             BluetoothDevice d = deviceListAdapter.getItem(pos);
                             connectToBluetoothDevice(d);
                         } else {
-                            Toasty.warning(MainActivity.this, "No device selected.").show();
+                            Toasty.warning(MainActivity.this, "Nobena naprava ni izbrana.").show();
                         }
                     }
                 })
