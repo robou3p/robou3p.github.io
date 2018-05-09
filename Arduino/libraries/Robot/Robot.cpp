@@ -46,9 +46,10 @@ Robot::Robot()
  */
 void Robot::drive(float v, float w)
 {
-    // ToDo: check
-    motor[LEFT].setSpeed(v - w * width * M_PI);
-    motor[RIGHT].setSpeed(v + w * width * M_PI);
+    float leftd = motor[LEFT].getDiameter();
+    float rightd = motor[RIGHT].getDiameter();
+    motor[LEFT].setSpeed(2 * v / leftd - w * width / leftd);
+    motor[RIGHT].setSpeed(2 * v / rightd + w * width / rightd);
 }
 
 /*
