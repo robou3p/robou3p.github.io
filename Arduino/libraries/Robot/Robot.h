@@ -53,7 +53,8 @@ public:
 
 private:
   void setupEncoders();
-
+  /* DODANO */float leftd = 0.03;
+  /* DODANO */float rightd = 0.03;
   float width = 0.084;
 };
 
