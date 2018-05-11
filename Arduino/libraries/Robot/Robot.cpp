@@ -53,6 +53,49 @@ void Robot::drive(float v, float w)
 }
 
 /*
+ * Drive forward for certain distance (m).
+ */
+void Robot::go(float distance)
+{
+    robot.motor[LEFT].resetDistance();
+    for(int i = 0; i < 1000000; i++){
+        robot.motor[LEFT].setVoltage(0.9*distance/abs(distance));
+        robot.motor[RIGHT].setVoltage(0.9*distance/abs(distance));
+        if(abs(robot.motor[LEFT].getDistance()) >= abs(distance)){
+            robot.motor[LEFT].setVoltage(0);
+            robot.motor[RIGHT].setVoltage(0);
+            delay(100);
+            break;
+        }
+    }
+}
+
+/*
+ * Rotate for certain angle (°).
+ */
+void Robot::turn(float angle)
+{
+    robot.motor[LEFT].resetDistance();
+    robot.motor[RIGHT].resetDistance();
+    for(int i = 0; i < 1000000; i++){
+        if(i < 4){
+            motor[LEFT].setSpeed(-i*angle/abs(angle));
+            motor[RIGHT].setSpeed(i*angle/abs(angle));
+        }
+        else{
+            motor[LEFT].setSpeed(-4*angle/abs(angle));
+            motor[RIGHT].setSpeed(4*angle/abs(angle));
+        }
+        if((abs(robot.motor[LEFT].getDistance()) >= abs(0.000705*angle)) || (abs(robot.motor[RIGHT].getDistance()) >= abs(0.000705*angle))){
+            robot.motor[LEFT].setVoltage(0);
+            robot.motor[RIGHT].setVoltage(0);
+            delay(100);
+            break;
+        }
+    }
+}
+
+/*
  * Beeps with the specified frequency and duration.
  */
 void Robot::beep(int16_t frequency, int16_t duration)
