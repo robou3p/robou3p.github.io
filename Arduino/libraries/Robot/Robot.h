@@ -40,6 +40,8 @@ class Robot
 public:
   Robot();
   void drive(float v, float w);
+  void go(float distance);
+  void turn(float angle);
   void beep(int16_t frequency, int16_t duration);
   uint8_t buttonPressed();
   float battery();
