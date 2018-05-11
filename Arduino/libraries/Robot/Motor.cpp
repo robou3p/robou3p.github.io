@@ -113,7 +113,7 @@ float Motor::getCurrent()
  */
 float Motor::getDistance()
 {
-    return encoderTicks * diameter * 0.008767561547;
+    return encoderTicks * diameter * 0.0161;
 }
 
 /*
