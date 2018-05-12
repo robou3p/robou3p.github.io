@@ -14,6 +14,8 @@
 //#include "Distance.h"
 
 #define duration1000ms 1000 //casovnik dolzine 1000ms
+#define LEFT 0 //levi motor se klice z besedo LEFT
+#define RIGHT 1 //desni motor se klice z besedo RIGHT
 
 class Test
 {
