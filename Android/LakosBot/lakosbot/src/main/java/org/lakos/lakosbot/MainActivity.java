@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         String dirRstr = data[2] == 0 ? "nazaj" : "naprej";
         textViewTest.setText(String.format(Locale.ENGLISH, "L: %3d %s\nD: %3d %s", data[1], dirLstr, data[3], dirRstr));
 
-        if(btConnectionThread != null) {
+        if(btConnectionThread != null && btConnectionThread.isConnected()) {
             byte msg[] = {
                     'L',
                     data[0], // dirL
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
             Log.i(TAG, "Sending message: " + Arrays.toString(msg));
             btConnectionThread.write(msg);
         } else {
-            Log.w(TAG, "BluetoothConnectionThread is null!");
+            Log.w(TAG, "BluetoothConnectionThread is null or disconnected!");
         }
     }
 
@@ -202,7 +202,6 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         ButterKnife.bind(this);
 
         // dodajanje senzorjev
-        //wrapper();
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
@@ -253,8 +252,10 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         sensorManager.registerListener(sensorListener, magnetometer, SensorManager.SENSOR_DELAY_UI);
 
         // Register for broadcasts when a device is discovered
-        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        registerReceiver(bluetoothDeviceFoundReceiver, filter);
+        IntentFilter btFilter = new IntentFilter();
+        btFilter.addAction(BluetoothDevice.ACTION_FOUND);
+        btFilter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED);
+        registerReceiver(bluetoothDeviceFoundReceiver, btFilter);
     }
 
     @Override
@@ -271,13 +272,20 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     private BroadcastReceiver bluetoothDeviceFoundReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            // Get the BluetoothDevice object from the Intent
-            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-            if(device != null && deviceList != null) {
-                Log.v(TAG, "Device discovered: " + device.toString());
-                deviceList.add(device);
-                deviceListAdapter.notifyDataSetChanged();
+            String action = intent.getAction() != null ? intent.getAction() : "";
+            if(action.equals(BluetoothDevice.ACTION_FOUND)) {
+                // Get the BluetoothDevice object from the Intent
+                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                if(device != null && deviceList != null) {
+                    Log.v(TAG, "Device discovered: " + device.toString());
+                    deviceList.add(device);
+                    deviceListAdapter.notifyDataSetChanged();
+                }
+            } else if(action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)) {
+                LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(BTC_CLOSE));
+                if(btConnectionThread != null) btConnectionThread.cancel();
             }
+
         }
     };
 
@@ -414,21 +422,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
 
             @Override
             public void onUp() {
-                wheelL = wheelR = 0;
-                if(btConnectionThread != null) {
-                    byte msg[] = {
-                            'L',
-                            0, // dirL
-                            0, // speedL
-                            'R',
-                            0, // dirR
-                            0, // speedR
-                    };
-                    Log.i(TAG, "Sending message: " + Arrays.toString(msg));
-                    btConnectionThread.write(msg);
-                } else {
-                    Log.w(TAG, "BluetoothConnectionThread is null!");
-                }
+                sendData(new byte[]{0, 0, 0, 0});
                 //textViewTest.setText(String.format(Locale.ENGLISH, "L:%d\nD:%d", Math.round(wheelL*100*Math.pow(offset, 2)), Math.round(wheelR*100*Math.pow(offset,2 ))));
             }
         });
