@@ -1,5 +1,6 @@
 package org.lakos.lakosbot;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -17,6 +18,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -32,6 +34,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anthonycr.grant.PermissionsManager;
+import com.anthonycr.grant.PermissionsResultAction;
 import com.jmedeisis.bugstick.Joystick;
 import com.jmedeisis.bugstick.JoystickListener;
 
@@ -84,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
     // Accelerometer
     private SensorManager sensorManager;
     private SensorListener sensorListener;
-    Sensor accelerometer;
-    Sensor magnetometer;
+    private Sensor accelerometer;
+    private Sensor magnetometer;
 
     // Misc
     private ActionBar activityActionBar;
@@ -155,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         String dirRstr = data[2] == 0 ? "nazaj" : "naprej";
         textViewTest.setText(String.format(Locale.ENGLISH, "L: %3d %s\nD: %3d %s", data[1], dirLstr, data[3], dirRstr));
 
-        if(btConnectionThread != null && robotControlActive) {
+        if(btConnectionThread != null) {
             byte msg[] = {
                     'L',
                     data[0], // dirL
@@ -247,6 +251,10 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         // accelerometer, magnetometer
         sensorManager.registerListener(sensorListener, accelerometer, SensorManager.SENSOR_DELAY_UI);
         sensorManager.registerListener(sensorListener, magnetometer, SensorManager.SENSOR_DELAY_UI);
+
+        // Register for broadcasts when a device is discovered
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        registerReceiver(bluetoothDeviceFoundReceiver, filter);
     }
 
     @Override
@@ -257,7 +265,21 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         stopBluetoothDiscovery();
         sensorManager.unregisterListener(sensorListener);
         robotControlActive = false;
+        unregisterReceiver(bluetoothDeviceFoundReceiver);
     }
+
+    private BroadcastReceiver bluetoothDeviceFoundReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get the BluetoothDevice object from the Intent
+            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+            if(device != null && deviceList != null) {
+                Log.v(TAG, "Device discovered: " + device.toString());
+                deviceList.add(device);
+                deviceListAdapter.notifyDataSetChanged();
+            }
+        }
+    };
 
     @Override
     protected void onDestroy() {
@@ -495,12 +517,23 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
             case R.id.connect:
                 if(bluetoothAdapter == null || !bluetoothAdapter.isEnabled()) {
                     initBluetooth();
+                }
+                if(btConnectionThread == null || !btConnectionThread.isConnected()) {
+                    PermissionsManager.getInstance().requestPermissionsIfNecessaryForResult(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                            new PermissionsResultAction() {
+                                @Override
+                                public void onGranted() {
+                                    showBluetoothDevicesDialog();
+                                }
+                                @Override
+                                public void onDenied(String permission) {
+                                    Toasty.warning(getBaseContext(), "Brez danega dovoljenja se lahko zgodi, da iskanje novih naprav ne bo delovalo.", Toast.LENGTH_LONG).show();
+                                    showBluetoothDevicesDialog();
+                                }
+                            }
+                    );
                 } else {
-                    if(btConnectionThread == null || !btConnectionThread.isConnected()) {
-                        showBluetoothDevicesDialog();
-                    } else {
-                        btConnectionThread.cancel();
-                    }
+                    btConnectionThread.cancel();
                 }
                 return true;
             case R.id.calibrate:
@@ -575,7 +608,9 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
                     }
                 });
 
-        Toasty.info(this, "Novo najdene naprave se bodo pokazale na dnu seznama.").show();
+        if(PermissionsManager.getInstance().hasPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+            Toasty.info(this, "Novo najdene naprave se bodo pokazale na dnu seznama.").show();
+        }
         dialogBuilder.show();
     }
 
@@ -636,5 +671,12 @@ public class MainActivity extends AppCompatActivity implements CalibrationDialog
         Log.d(TAG, "Calibration vectors applied to sensor listener!");
 
         SensorConfigurationLoader.saveCalibration(this, vectors);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
 }

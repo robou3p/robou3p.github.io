@@ -116,7 +116,7 @@ public class SensorListener implements SensorEventListener {
             float speedR = speedValue - steerValue/10 - steerValue * speedValue / 100;
             float speedL = speedValue + steerValue/10 + steerValue * speedValue / 100;
 
-            Log.i("SENSOOOOOOOOOOORRR", String.format("r: %3.3f, l: %3.3f", speedR, speedL));
+            //Log.i("SENSOOOOOOOOOOORRR", String.format("r: %3.3f, l: %3.3f", speedR, speedL));
 
             // Limit speed value between +MAX and -MAX
             speedR = Math.max(Math.min(speedR, MAX_SPEED_VALUE), -MAX_SPEED_VALUE);
