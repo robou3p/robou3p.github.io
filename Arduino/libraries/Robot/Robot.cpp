@@ -64,7 +64,7 @@ void Robot::go(float distance)
         if(abs(robot.motor[LEFT].getDistance()) >= abs(distance)){
             robot.motor[LEFT].setVoltage(0);
             robot.motor[RIGHT].setVoltage(0);
-            delay(100);
+            delay(250);
             break;
         }
     }
@@ -89,7 +89,7 @@ void Robot::turn(float angle)
         if((abs(robot.motor[LEFT].getDistance()) >= abs(0.000705*angle)) || (abs(robot.motor[RIGHT].getDistance()) >= abs(0.000705*angle))){
             robot.motor[LEFT].setVoltage(0);
             robot.motor[RIGHT].setVoltage(0);
-            delay(100);
+            delay(250);
             break;
         }
     }
