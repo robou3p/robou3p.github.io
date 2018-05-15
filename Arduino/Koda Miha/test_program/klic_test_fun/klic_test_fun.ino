@@ -62,5 +62,5 @@ void loop() {
 		*/
   }
 
-  delay(10); //zakasnitev za zagotavljanje stabilnosti delovanja
+  delay(1); //zakasnitev za zagotavljanje stabilnosti delovanja
 }
