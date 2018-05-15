@@ -13,14 +13,14 @@ void loop() {
           int dirLeft = Serial1.read();
           while (!Serial1.available()) {}
           int speedLeft = Serial1.read();
-          if (speedLeft > 255)
-            speedLeft = 255;
+          if (speedLeft > 100)
+            speedLeft = 100;
           if (dirLeft == 1) {
             Serial.println(speedLeft);
-            robot.motor[LEFT].setVoltage(speedLeft / 10.0);
+            robot.motor[LEFT].setVoltage(speedLeft / 50.0);
           } else {
             Serial.println(speedLeft);
-            robot.motor[LEFT].setVoltage(-speedLeft / 10.0);
+            robot.motor[LEFT].setVoltage(-speedLeft / 50.0);
           }
           break;
         }
@@ -29,15 +29,15 @@ void loop() {
           int dirRight = Serial1.read();
           while (!Serial1.available()) {}
           int speedRight = Serial1.read();
-          if (speedRight > 255) {
-            speedRight = 255;
+          if (speedRight > 100) {
+            speedRight = 100;
           }
           if (dirRight == 1) {
             Serial.println(speedRight);
-            robot.motor[RIGHT].setVoltage(speedRight / 10.0);
+            robot.motor[RIGHT].setVoltage(speedRight / 50.0);
           } else {
             Serial.println(speedRight);
-            robot.motor[RIGHT].setVoltage(-speedRight / 10.0);
+            robot.motor[RIGHT].setVoltage(-speedRight / 50.0);
           }
           break;
         }
