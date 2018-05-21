@@ -5,8 +5,10 @@ Z aplikacijo *LakosBot* za Android je mogoče upravljati robota s pomočjo joyst
 ## Namestitev aplikacije na telefon
 
 1. Prenesite apk: [Android aplikacija LakosBot v1.0.1](https://github.com/robou3p/robou3p.github.io/raw/android/Android/lakosbot-2-v1.0.1.apk)
+2. Na telefonu med shranjenimi prenosi (ali v obvestilu o končanem prenosu) poiščite apk in ga poženite, da se prične namestitev.
 
-todo: screenshoti namestitve
+![Slika 1](http://shrani.si/f/3R/Pf/1DrsdcVJ/install1.png)
+![Slika 2](http://shrani.si/f/m/8d/4UtZfmmJ/install2.png)
 
 ## Namestitev kode na Arduino robota
 
