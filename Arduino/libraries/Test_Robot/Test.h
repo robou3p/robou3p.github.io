@@ -22,15 +22,19 @@ class Test
   public:
     //klic funkcije v Arduino IDE okolju je npr.: test.battery();
     Test();
-    void battery();
-    void motor(char LR);
+    void motor(uint8_t motor);
+    void distance();
+    void line();
     void buzzer();
+    void battery();
+
+    //NE DELUJE NA 2. VERZIJI ROBOTOV
+    /*
     void temp();
     void mag();
     void accel();
     void gyro();
-    void distance();
-    void line();
+    */
 
     Robot robot;
 

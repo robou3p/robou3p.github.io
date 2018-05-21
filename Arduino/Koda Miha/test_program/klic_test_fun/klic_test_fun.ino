@@ -2,21 +2,14 @@
 #include <Test.h>
 
 void setup() {
-  while (!Serial);
+  while (!Serial); //nic se ne zgodi dokler serijski monitor ni odprt
   Serial.println("Zapuscas setup!");
 }
 
 void loop() {
 
-  if(robot.buttonPressed()){
+  if(robot.buttonPressed()){ //ob pritisku gumba se zacnejo izvajati testi po vrsti
     delay(1000); //zakasnitev za debouncing
-
-    Serial.println("--- ZAČETEK TESTA BATERIJE ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
-    test.battery();
-    Serial.println("--- KONEC TESTA BATERIJE ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
-    delay(2000); //zakasnitev za zagotavljanje stabilnosti delovanja
 
     Serial.println("--- ZAČETEK TESTA LEVEGA MOTORJA ---");
     Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
@@ -26,40 +19,39 @@ void loop() {
     delay(2000); //zakasnitev za zagotavljanje stabilnosti delovanja
 
     Serial.println("--- ZAČETEK TESTA DESNEGA MOTORJA ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
+    Serial.println();
     test.motor(RIGHT);
     Serial.println("--- KONEC TESTA DESNEGA MOTORJA ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
-    delay(2000); //zakasnitev za zagotavljanje stabilnosti delovanja
-
-    Serial.println("--- ZAČETEK TESTA BRENČAČA ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
-    test.buzzer();
-    Serial.println("--- KONEC TESTA BRENČAČA ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
-    delay(2000); //zakasnitev za zagotavljanje stabilnosti delovanja
+    Serial.println();
+    delay(2000);
 
     Serial.println("--- ZAČETEK TESTA SENZORJEV ZA RAZDALJO ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
+    Serial.println();
     test.distance();
     Serial.println("--- KONEC TESTA SENZORJEV ZA RAZDALJO ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
-    delay(2000); //zakasnitev za zagotavljanje stabilnosti delovanja
+    Serial.println();
+    delay(2000);
 
     Serial.println("--- ZAČETEK TESTA SENZORJEV ZA SVETLOBO ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
+    Serial.println();
     test.line();
     Serial.println("--- KONEC TESTA SENZORJEV ZA SVETLOBO ---");
-    Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
-    delay(2000); //zakasnitev za zagotavljanje stabilnosti delovanja
+    Serial.println();
+    delay(2000);
 
-    //To spodaj ne deluje na 2. verziji robota
-    /*
-    test.temp();
-    test.mag();
-    test.accel();
-    test.gyro();
-    */
+    Serial.println("--- ZAČETEK TESTA BRENČAČA ---");
+    Serial.println();
+    test.buzzer();
+    Serial.println("--- KONEC TESTA BRENČAČA ---");
+    Serial.println();
+    delay(2000);
+
+    Serial.println("--- ZAČETEK TESTA BATERIJE ---");
+    Serial.println();
+    test.battery();
+    Serial.println("--- KONEC TESTA BATERIJE ---");
+    Serial.println();
+    delay(2000);
   }
 
   delay(10); //zakasnitev za zagotavljanje stabilnosti delovanja
