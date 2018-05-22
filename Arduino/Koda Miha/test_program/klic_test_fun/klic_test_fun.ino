@@ -1,14 +1,14 @@
 #include <Robot.h>
-#include <Test.h>
+#include <Test.h> //pomembno je, da vključimo testno knjižnico
 
 void setup() {
-  while (!Serial); //nic se ne zgodi dokler serijski monitor ni odprt
-  Serial.println("Zapuscas setup!");
+  while (!Serial); //nič se ne zgodi, dokler serijski monitor ni odprt
+  Serial.println("Zapuščaš setup!");
 }
 
 void loop() {
 
-  if(robot.buttonPressed()){ //ob pritisku gumba se zacnejo izvajati testi po vrsti
+  if(robot.buttonPressed()){ //ob pritisku funkcijskega gumba na robotu, se začnejo izvajati testi po vrsti
     delay(1000); //zakasnitev za debouncing
 
     Serial.println("--- ZAČETEK TESTA LEVEGA MOTORJA ---");
