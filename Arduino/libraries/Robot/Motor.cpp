@@ -113,7 +113,7 @@ float Motor::getCurrent()
  */
 float Motor::getDistance()
 {
-    return encoderTicks * diameter * 0.008767561547;
+    return encoderTicks * diameter * 0.0161;
 }
 
 /*
@@ -160,7 +160,7 @@ void Motor::CAPT_ISR(uint8_t motor)
     encoderDirection = digitalRead(this->ENCD) ? -1 : 1;
     encoderTicks += encoderDirection;
     encoderOverflows = 0;
-    speed = encoderDirection * 84168.59085304 /*140280.98475507*/ / (float)encoderDt;
+    speed = encoderDirection * /*84168.59085304*/ 140280.98475507 / (float)encoderDt;
 }
 
 /*

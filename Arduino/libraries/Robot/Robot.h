@@ -5,9 +5,9 @@
 #include "Motor.h"
 #include "Line.h"
 #include "Distance.h"
-#include "MPU9250.h"
-#include "Filters.h"
-#include "Util.h"
+//#include "MPU9250.h"
+//#include "Filters.h"
+//#include "Util.h"
 #include <avr/interrupt.h>
 #include <math.h>
 #include "Wire.h"
@@ -40,6 +40,8 @@ class Robot
 public:
   Robot();
   void drive(float v, float w);
+  void go(float distance);
+  void turn(float angle);
   void beep(int16_t frequency, int16_t duration);
   uint8_t buttonPressed();
   float battery();
@@ -48,12 +50,13 @@ public:
   Motor motor[2] = {Motor(AIN1, AIN2, MAI, ENCAD), Motor(BIN1, BIN2, MBI, ENCBD)};
   Line line = Line(MUXL0, MUXL1, MUXL2, LFLED, LFSEN);
   Distance distance = Distance(MUXL0, MUXL1, MUXL2, MMLED, MMSEN);
-  MPU9250 imu = MPU9250(Wire, 0x68);
-  Filters filters;
+  //MPU9250 imu = MPU9250(Wire, 0x68);
+  //Filters filters;
 
 private:
   void setupEncoders();
-
+  /* DODANO */float leftd = 0.03;
+  /* DODANO */float rightd = 0.03;
   float width = 0.084;
 };
 

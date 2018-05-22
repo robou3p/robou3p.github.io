@@ -46,9 +46,53 @@ Robot::Robot()
  */
 void Robot::drive(float v, float w)
 {
-    // ToDo: check
-    motor[LEFT].setSpeed(v - w * width * M_PI);
-    motor[RIGHT].setSpeed(v + w * width * M_PI);
+    float leftd = motor[LEFT].getDiameter();
+    float rightd = motor[RIGHT].getDiameter();
+    motor[LEFT].setSpeed(2 * v / leftd - w * width / leftd);
+    motor[RIGHT].setSpeed(2 * v / rightd + w * width / rightd);
+}
+
+/*
+ * Drive forward for certain distance (m).
+ */
+void Robot::go(float distance)
+{
+    robot.motor[LEFT].resetDistance();
+    for(int i = 0; i < 1000000; i++){
+        robot.motor[LEFT].setVoltage(0.9*distance/abs(distance));
+        robot.motor[RIGHT].setVoltage(0.9*distance/abs(distance));
+        if(abs(robot.motor[LEFT].getDistance()) >= abs(distance)){
+            robot.motor[LEFT].setVoltage(0);
+            robot.motor[RIGHT].setVoltage(0);
+            delay(250);
+            break;
+        }
+    }
+}
+
+/*
+ * Rotate for certain angle (°).
+ */
+void Robot::turn(float angle)
+{
+    robot.motor[LEFT].resetDistance();
+    robot.motor[RIGHT].resetDistance();
+    for(int i = 0; i < 1000000; i++){
+        if(i < 4){
+            motor[LEFT].setSpeed(-i*angle/abs(angle));
+            motor[RIGHT].setSpeed(i*angle/abs(angle));
+        }
+        else{
+            motor[LEFT].setSpeed(-4*angle/abs(angle));
+            motor[RIGHT].setSpeed(4*angle/abs(angle));
+        }
+        if((abs(robot.motor[LEFT].getDistance()) >= abs(0.000705*angle)) || (abs(robot.motor[RIGHT].getDistance()) >= abs(0.000705*angle))){
+            robot.motor[LEFT].setVoltage(0);
+            robot.motor[RIGHT].setVoltage(0);
+            delay(250);
+            break;
+        }
+    }
 }
 
 /*

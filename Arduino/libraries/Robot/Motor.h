@@ -33,7 +33,7 @@ public:
 private:
   float diameter = 0.032;
   float voltage = 0.0;
-  float speed = 0.0;
+  volatile float speed = 0.0;  //added volatile for testing
   float current = 0.0;
   float distance = 0.0;
   float kp = 0.15;
@@ -45,7 +45,7 @@ private:
   uint8_t ENCD = 0;
   volatile uint32_t encoderDt = 0;
   volatile int8_t encoderDirection = 1;
-  
+
   volatile uint32_t encoderLast[4] = {0, 0, 0, 0};
   volatile uint32_t encoderOverflows = 0;
   volatile uint32_t motorLast = 0;
