@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LakosBot.iml" filepath="$PROJECT_DIR$/LakosBot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Bugstick/bugstick/bugstick.iml" filepath="$PROJECT_DIR$/../Bugstick/bugstick/bugstick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lakosbot/lakosbot.iml" filepath="$PROJECT_DIR$/lakosbot/lakosbot.iml" />
+    </modules>
+  </component>
+</project>

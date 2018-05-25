@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "org.lakos.lakosbot"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 2
+        versionName "1.0.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':bugstick')
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    //implementation 'com.android.support:design:26.1.0'
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    implementation 'com.github.GrenderG:Toasty:1.3.0'
+
+    implementation 'com.github.faruktoptas:FancyShowCaseView:1.0.0'
+
+    implementation 'com.anthonycr.grant:permissions:1.1.2'
+
+    //implementation 'com.jmedeisis:bugstick:0.2.2'
+}

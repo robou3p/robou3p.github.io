@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/connect"
+        android:icon="@drawable/ic_bluetooth_searching_white"
+        android:title="Poveži se z robotom..."
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/calibrate"
+        android:icon="@drawable/ic_screen_rotation_white"
+        android:title="Kalibriraj senzor telefona"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/rotate"
+        android:title="Obrni zaslon"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/intro"
+        android:title="Prikaži uvod"
+        app:showAsAction="never" />
+
+</menu>

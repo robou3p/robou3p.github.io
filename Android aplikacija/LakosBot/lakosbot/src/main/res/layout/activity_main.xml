@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_padding"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <FrameLayout
+        android:id="@+id/frameLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.jmedeisis.bugstick.Joystick
+            android:id="@+id/joystick"
+            android:layout_width="@dimen/base_size"
+            android:layout_height="@dimen/base_size"
+            android:layout_gravity="center"
+            android:background="@drawable/joystick_base">
+
+            <!-- You may use any View here. -->
+            <Button
+                android:id="@+id/joystickButton"
+                android:layout_width="@dimen/stick_size"
+                android:layout_height="@dimen/stick_size"
+                android:background="@drawable/joystick_button_disabled" />
+
+        </com.jmedeisis.bugstick.Joystick>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="monospace"
+        android:text="n/a" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/buttonActivate"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/rounded_button"
+        app:backgroundTint="@color/colorActivateButtonGreen"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="Start robot control" />
+
+</LinearLayout>
