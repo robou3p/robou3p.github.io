@@ -2632,3 +2632,73 @@ Settings file saved to:
 
 2018-05-22T14:35:55.053Z - info: [ServerMgr] Server stopped.
 2018-05-22T14:35:55.061Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-25T12:25:55.354Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-25T12:25:55.354Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje
+2018-05-25T12:25:55.354Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-25T12:25:55.416Z - info: [ServerMgr] Command: C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-25T12:25:56.186Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-10-10.0.16299
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje
+Selected server root: C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	COM6
+Default Serial Port set:
+	None
+
+Settings file sketch directory is not valid:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Default Sketch directory set:
+	C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega328pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega328pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje\ServerCompilerSettings.ini
+
+2018-05-25T12:26:43.221Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje
+
+Launching the HTTP service...
+
+Provided Serial Port is not valid: !!!
+	no_ports
+Default Serial Port set:
+	None
+Settings file saved to:
+	C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje\ServerCompilerSettings.ini
+
+2018-05-25T12:26:45.465Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Martin\Desktop\robou3p.github.io\Ardublockly - Scratch okolje\ServerCompilerSettings.ini
+
+2018-05-25T12:26:49.736Z - info: [ServerMgr] Server stopped.
+2018-05-25T12:26:49.749Z - info: [ArdublocklySrv] Process exited with code null
