@@ -10,11 +10,11 @@
 - *Ostalo*: datoteke, ki ne pašejo nikamor drugam
 - *Wiki_images*: mapa s slikami, ki se uporabljajo v wikiju
 
-## :star: Vse je razloženo v Wikiju
+## ⭐ Vse je razloženo v Wikiju
 
 Vsa potrebna dokumentacija - navodila za namestitev, opis funkcij robota, ipd. je na voljo na wikiju.
 
-povezava do wikija :point_right: [https://github.com/robou3p/robou3p.github.io/wiki](https://github.com/robou3p/robou3p.github.io/wiki) :point_left:
+povezava do wikija 👉 [https://github.com/robou3p/robou3p.github.io/wiki](https://github.com/robou3p/robou3p.github.io/wiki) 👈
 
 ## Prenos knjižnice
 
