@@ -5,8 +5,6 @@ void setup() {
 }
 
 void loop() {
-  if (robot.buttonPressed()) {
-    robot.beep(261, 1000);
-  }
+  robot.beep(349,2000);
 
 }
