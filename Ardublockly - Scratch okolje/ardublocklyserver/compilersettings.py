@@ -61,6 +61,7 @@ class ServerCompilerSettings(object):
                        'Leonardo': 'arduino:avr:leonardo',
                        'Yun': 'arduino:avr:leonardo',
                        'Mega': 'arduino:avr:mega',
+                       'Micro': 'arduino:avr:micro',
                        'Duemilanove 328p': 'arduino:avr:diecimila',
                        'Duemilanove 168p':
                                'arduino:avr:diecimila:cpu=atmega168',
