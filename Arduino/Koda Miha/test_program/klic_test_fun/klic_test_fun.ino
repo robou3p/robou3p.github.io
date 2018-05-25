@@ -1,58 +1,50 @@
-#include <Robot.h>
-#include <Test.h>
+#include <Test.h> //pomembno je, da vključimo testno knjižnico
 
 void setup() {
-  while (!Serial); //nic se ne zgodi dokler serijski monitor ni odprt
-  Serial.println("Zapuscas setup!");
+  while (!Serial); //nič se ne zgodi, dokler serijski monitor ni odprt
 }
 
 void loop() {
 
-  if(robot.buttonPressed()){ //ob pritisku gumba se zacnejo izvajati testi po vrsti
+  if(robot.buttonPressed()){ //ob pritisku funkcijskega gumba na robotu, se začnejo izvajati testi po vrsti
     delay(1000); //zakasnitev za debouncing
 
-    Serial.println("--- ZAČETEK TESTA LEVEGA MOTORJA ---");
+    Serial.println("TEST LEVEGA MOTORJA");
     Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
     test.motor(LEFT);
-    Serial.println("--- KONEC TESTA LEVEGA MOTORJA ---");
     Serial.println(); //izpis prazne vrstice na serijski monitor za lepši pregled
     delay(2000); //zakasnitev za zagotavljanje stabilnosti delovanja
 
-    Serial.println("--- ZAČETEK TESTA DESNEGA MOTORJA ---");
+    Serial.println("TEST DESNEGA MOTORJA");
     Serial.println();
     test.motor(RIGHT);
-    Serial.println("--- KONEC TESTA DESNEGA MOTORJA ---");
     Serial.println();
     delay(2000);
 
-    Serial.println("--- ZAČETEK TESTA SENZORJEV ZA RAZDALJO ---");
+    Serial.println("TEST SENZORJEV ZA RAZDALJO");
     Serial.println();
     test.distance();
-    Serial.println("--- KONEC TESTA SENZORJEV ZA RAZDALJO ---");
     Serial.println();
     delay(2000);
 
-    Serial.println("--- ZAČETEK TESTA SENZORJEV ZA SVETLOBO ---");
+    Serial.println("TEST SENZORJEV ZA SVETLOBO");
     Serial.println();
     test.line();
-    Serial.println("--- KONEC TESTA SENZORJEV ZA SVETLOBO ---");
     Serial.println();
     delay(2000);
 
-    Serial.println("--- ZAČETEK TESTA BRENČAČA ---");
+    Serial.println("TEST BRENČAČA");
     Serial.println();
     test.buzzer();
-    Serial.println("--- KONEC TESTA BRENČAČA ---");
     Serial.println();
     delay(2000);
 
-    Serial.println("--- ZAČETEK TESTA BATERIJE ---");
+    Serial.println("TEST BATERIJE");
     Serial.println();
     test.battery();
-    Serial.println("--- KONEC TESTA BATERIJE ---");
     Serial.println();
     delay(2000);
-  }
 
+  }
   delay(10); //zakasnitev za zagotavljanje stabilnosti delovanja
 }

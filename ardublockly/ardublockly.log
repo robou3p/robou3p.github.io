@@ -1,0 +1,2634 @@
+2018-03-13T14:31:22.801Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-13T14:31:22.801Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-13T14:31:22.801Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-13T14:31:22.832Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-13T14:31:23.535Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings file corrupted or not found in:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings will be set to the default values.
+
+Final settings loaded:
+	Compiler directory: None
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-13T14:31:35.405Z - info: [ServerMgr] Server stopped.
+2018-03-13T14:31:35.413Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-13T14:40:21.918Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-13T14:40:21.918Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-13T14:40:21.918Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-13T14:40:21.950Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-13T14:40:22.761Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings file corrupted or not found in:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings will be set to the default values.
+
+Final settings loaded:
+	Compiler directory: None
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-13T14:40:25.278Z - info: [ServerMgr] Server stopped.
+2018-03-13T14:40:25.289Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-13T14:41:55.440Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-13T14:41:55.440Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-13T14:41:55.440Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-13T14:41:55.472Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-13T14:41:56.207Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+The provided compiler path in the settings file is not valid:
+	None
+Default compiler path set:
+	None
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: None
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-13T14:42:10.334Z - info: [ServerMgr] Server stopped.
+2018-03-13T14:42:10.344Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-13T14:43:22.922Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-13T14:43:22.922Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-13T14:43:22.922Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-13T14:43:22.954Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-13T14:43:23.696Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-13T14:44:04.678Z - info: [ServerMgr] Server stopped.
+2018-03-13T14:44:04.688Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-15T13:37:37.039Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-15T13:37:37.041Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-15T13:37:37.041Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-15T13:37:37.066Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-15T13:37:49.015Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-15T13:37:53.132Z - info: [ServerMgr] Server stopped.
+2018-03-15T13:37:53.142Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-15T13:41:54.166Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-15T13:41:54.168Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-15T13:41:54.168Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-15T13:41:54.197Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-15T13:41:54.907Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-15T13:42:50.987Z - info: [ServerMgr] Server stopped.
+2018-03-15T13:42:50.999Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-16T07:10:58.326Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-16T07:10:58.326Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-16T07:10:58.326Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-16T07:10:58.451Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-16T07:11:01.673Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-16T07:11:06.100Z - info: [ServerMgr] Server stopped.
+2018-03-16T08:02:37.908Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-16T08:02:37.908Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-16T08:02:37.908Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-16T08:02:37.939Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-16T08:02:38.717Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-16T08:02:40.286Z - info: [ServerMgr] Server stopped.
+2018-03-16T08:02:40.297Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-16T09:53:09.484Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-16T09:53:09.484Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-16T09:53:09.484Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-16T09:53:09.515Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-16T09:53:10.480Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-16T09:53:33.059Z - info: [ServerMgr] Server stopped.
+2018-03-16T09:53:33.069Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-19T14:42:54.671Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-19T14:42:54.673Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-19T14:42:54.673Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-19T14:42:54.708Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-19T14:43:01.264Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-19T14:44:59.886Z - info: [ServerMgr] Server stopped.
+2018-03-19T14:44:59.903Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-19T14:47:49.117Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-19T14:47:49.119Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-19T14:47:49.119Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-19T14:47:49.150Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-19T14:47:49.987Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-19T14:47:51.464Z - info: [ServerMgr] Server stopped.
+2018-03-19T14:47:51.476Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-20T10:46:10.545Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-20T10:46:10.545Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-20T10:46:10.545Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-20T10:46:10.576Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-20T10:46:13.369Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	COM6
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-20T10:46:26.170Z - info: [ServerMgr] Server stopped.
+2018-03-20T10:46:26.178Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-20T10:46:34.419Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-20T10:46:34.419Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-20T10:46:34.419Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-20T10:46:34.450Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-20T10:46:35.141Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-20T10:47:02.849Z - info: [ServerMgr] Server stopped.
+2018-03-20T10:47:02.857Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-20T10:49:04.413Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-20T10:49:04.413Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-20T10:49:04.413Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-20T10:49:04.444Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-20T10:49:05.135Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-20T10:49:10.004Z - info: [ServerMgr] Server stopped.
+2018-03-20T10:49:10.014Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-20T10:53:15.464Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-20T10:53:15.464Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-20T10:53:15.464Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-20T10:53:15.495Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-20T10:53:16.198Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-20T10:53:49.121Z - info: [ServerMgr] Server stopped.
+2018-03-20T10:53:49.128Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-20T10:57:19.370Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-20T10:57:19.370Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-20T10:57:19.370Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-20T10:57:19.401Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-20T10:57:20.134Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-20T10:57:31.994Z - info: [ServerMgr] Server stopped.
+2018-03-20T10:57:32.001Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-20T11:04:29.583Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-20T11:04:29.583Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-20T11:04:29.583Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-20T11:04:29.677Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-20T11:04:32.686Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	COM6
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-20T11:04:40.166Z - info: [ServerMgr] Server stopped.
+2018-03-20T11:04:40.175Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-20T11:04:49.145Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-20T11:04:49.145Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-20T11:04:49.145Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-20T11:04:49.176Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-20T11:04:49.829Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-20T11:05:23.806Z - info: [ServerMgr] Server stopped.
+2018-03-20T11:05:23.815Z - info: [ArdublocklySrv] Process exited with code null
+2018-03-21T16:31:55.557Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-03-21T16:31:55.559Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-03-21T16:31:55.559Z - info: [ArdublocklyElec] OS detected: win32
+2018-03-21T16:31:55.592Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-03-21T16:32:04.303Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-03-21T16:41:07.225Z - info: [ServerMgr] Server stopped.
+2018-03-21T16:41:07.237Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-07T13:39:06.506Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-07T13:39:06.506Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-07T13:39:06.506Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-07T13:39:06.534Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-07T13:39:14.594Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-07T13:40:12.768Z - info: [ServerMgr] Server stopped.
+2018-05-07T13:40:12.776Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-15T13:52:41.838Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-15T13:52:41.838Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-15T13:52:41.838Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-15T13:52:41.869Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-15T13:52:50.971Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T14:00:26.196Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T14:00:26.264Z - info: [ArdublocklySrv] 
+There are no available Serial Ports !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T14:29:07.924Z - info: [ServerMgr] Server stopped.
+2018-05-15T14:29:07.940Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-15T14:29:23.780Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-15T14:29:23.780Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-15T14:29:23.780Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-15T14:29:23.812Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-15T14:29:24.706Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T14:31:34.945Z - info: [ServerMgr] Server stopped.
+2018-05-15T14:31:34.961Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-15T14:32:32.071Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-15T14:32:32.071Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-15T14:32:32.071Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-15T14:32:32.103Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-15T14:32:32.899Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T14:33:47.681Z - info: [ServerMgr] Server stopped.
+2018-05-15T14:35:36.117Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-15T14:35:36.121Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-15T14:35:36.121Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-15T14:35:36.157Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-15T14:35:36.978Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T14:38:26.112Z - info: [ServerMgr] Server stopped.
+2018-05-15T14:38:32.792Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-15T14:38:32.792Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-15T14:38:32.792Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-15T14:38:32.824Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-15T14:38:33.632Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T14:46:11.508Z - info: [ServerMgr] Server stopped.
+2018-05-15T14:46:11.524Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-15T15:01:36.186Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-15T15:01:36.190Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-15T15:01:36.190Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-15T15:01:36.222Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-15T15:01:37.246Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-15T15:01:46.053Z - info: [ServerMgr] Server stopped.
+2018-05-15T15:01:46.063Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T07:49:23.998Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T07:49:24.000Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T07:49:24.000Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T07:49:24.030Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T07:49:33.105Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T07:58:07.497Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+There are no available Serial Ports !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T07:58:08.877Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Verify sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T07:58:33.847Z - info: [ServerMgr] Server stopped.
+2018-05-22T07:58:50.719Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T07:58:50.721Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T07:58:50.721Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T07:58:50.754Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T07:58:51.785Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:12:18.544Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:12:19.038Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T08:12:19.224Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T08:12:19.226Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T08:12:19.946Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T08:12:20.312Z - error: [ArdublocklySrv] Starting...
+2018-05-22T08:12:20.312Z - error: [ArdublocklySrv] 
+
+2018-05-22T08:12:39.956Z - info: [ArdublocklySrv] 
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:12:39.967Z - info: [ArdublocklySrv] 
+There are no available Serial Ports !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:21:04.341Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:21:04.798Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T08:21:04.984Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T08:21:04.987Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T08:21:05.669Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T08:21:06.053Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T08:46:51.959Z - info: [ServerMgr] Server stopped.
+2018-05-22T08:46:51.972Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T08:47:13.770Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T08:47:13.771Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T08:47:13.771Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T08:47:13.799Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T08:47:14.671Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	COM11
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:48:01.820Z - info: [ServerMgr] Server stopped.
+2018-05-22T08:51:12.735Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T08:51:12.737Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T08:51:12.737Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T08:51:12.767Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T08:51:13.583Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:51:23.705Z - info: [ServerMgr] Server stopped.
+2018-05-22T08:51:23.718Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T08:53:49.385Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T08:53:49.385Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T08:53:49.385Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T08:53:49.416Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T08:53:50.014Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T08:59:51.984Z - info: [ServerMgr] Server stopped.
+2018-05-22T08:59:51.998Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T08:59:59.219Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T08:59:59.221Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T08:59:59.221Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T08:59:59.251Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T09:00:00.144Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:02:29.791Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T09:02:29.980Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T09:02:29.982Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T09:02:30.640Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T09:02:31.018Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T09:02:38.316Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T09:02:38.509Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T09:02:38.512Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T09:02:39.205Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T09:02:39.552Z - error: [ArdublocklySrv] Starting...
+2018-05-22T09:02:39.552Z - error: [ArdublocklySrv] 
+
+2018-05-22T09:02:47.385Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:02:47.394Z - info: [ArdublocklySrv] 
+There are no available Serial Ports !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:04:53.090Z - info: [ArdublocklySrv] 
+The selected Serial Port is no longer available !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:04:56.286Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:04:57.131Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T09:04:57.336Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T09:04:57.338Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T09:04:58.038Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T09:04:58.450Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T09:05:09.877Z - info: [ArdublocklySrv] 
+
+2018-05-22T09:05:09.878Z - info: [ArdublocklySrv] 
+
+
+2018-05-22T09:05:09.878Z - info: [ArdublocklySrv] 
+
+
+
+
+
+
+
+2018-05-22T09:05:35.010Z - info: [ArdublocklySrv] Skica uporablja 9894 bajtov, kar je (34%) prostora namenjenega programu. Maksimum je 28672 bajtov.
+
+2018-05-22T09:05:35.010Z - info: [ArdublocklySrv] Globalna spremenljivka uporablja 1176 bajtov, kar je (45%) dinami�nega spomina in pu��a 1384 bajtov za lokalne spremenljivke. Maksimum je 2560 bajtov.
+
+2018-05-22T09:05:59.778Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T09:06:03.439Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T09:06:04.543Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T09:06:34.029Z - info: [ArdublocklySrv] Skica uporablja 9894 bajtov, kar je (34%) prostora namenjenega programu. Maksimum je 28672 bajtov.
+
+2018-05-22T09:06:34.029Z - info: [ArdublocklySrv] Globalna spremenljivka uporablja 1176 bajtov, kar je (45%) dinami�nega spomina in pu��a 1384 bajtov za lokalne spremenljivke. Maksimum je 2560 bajtov.
+
+2018-05-22T09:06:44.490Z - error: [ArdublocklySrv] Na izbranih vratih ni bilo mogo�e najti plo��ice. Preveri, �e ima� izbrana pravilna vrata. �e so vrata pravilna, poskusi pritisniti na "reset" gumb na plo��ici, po za�etku nalaganja na njo.
+
+2018-05-22T09:07:12.026Z - info: [ArdublocklySrv] Skica uporablja 9894 bajtov, kar je (34%) prostora namenjenega programu. Maksimum je 28672 bajtov.
+
+2018-05-22T09:07:12.026Z - info: [ArdublocklySrv] Globalna spremenljivka uporablja 1176 bajtov, kar je (45%) dinami�nega spomina in pu��a 1384 bajtov za lokalne spremenljivke. Maksimum je 2560 bajtov.
+
+2018-05-22T09:07:15.837Z - error: [ArdublocklySrv] 
+
+2018-05-22T09:07:15.838Z - error: [ArdublocklySrv] 
+
+2018-05-22T09:07:54.871Z - info: [ArdublocklySrv] 
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+The selected Serial Port is no longer available !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:08:03.592Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:08:03.905Z - info: [ArdublocklySrv] 
+The selected Serial Port is no longer available !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:08:21.034Z - info: [ArdublocklySrv] 
+The selected Serial Port is no longer available !!!
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:08:23.643Z - info: [ArdublocklySrv] 
+Serial Port set to:
+	COM4
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:08:36.641Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Verify sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:08:48.442Z - info: [ServerMgr] Server stopped.
+2018-05-22T09:08:51.820Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T09:08:51.822Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T09:08:51.822Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T09:08:51.852Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T09:08:52.707Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM4
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:10:20.709Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+Verifying the sketch...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --verify C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 52457)
+----------------------------------------
+
+Verifying the sketch...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --verify C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 52460)
+----------------------------------------
+
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:10:21.152Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T09:10:21.345Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T09:10:21.347Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T09:10:22.044Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T09:10:22.468Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T09:10:30.678Z - info: [ArdublocklySrv] 
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:10:45.596Z - info: [ServerMgr] Server stopped.
+2018-05-22T09:10:45.607Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T09:10:47.587Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T09:10:47.589Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T09:10:47.589Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T09:10:47.621Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T09:10:48.408Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM4
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:19:51.853Z - info: [ServerMgr] Server stopped.
+2018-05-22T09:19:51.865Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T09:20:23.224Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T09:20:23.226Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T09:20:23.226Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T09:20:23.254Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T09:20:23.911Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: COM4
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:21:17.793Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:25:24.706Z - info: [ServerMgr] Server stopped.
+2018-05-22T09:25:24.723Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T09:27:10.745Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T09:27:10.747Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T09:27:10.747Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T09:27:10.775Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T09:27:11.670Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	COM4
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:27:16.571Z - info: [ServerMgr] Server stopped.
+2018-05-22T09:27:16.583Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T09:28:35.579Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T09:28:35.581Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T09:28:35.581Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T09:28:35.606Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T09:28:36.346Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:28:44.942Z - info: [ServerMgr] Server stopped.
+2018-05-22T09:30:59.702Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T09:30:59.704Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T09:30:59.704Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T09:30:59.729Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T09:31:00.525Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T09:31:45.315Z - info: [ServerMgr] Server stopped.
+2018-05-22T09:31:45.322Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T11:20:13.648Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T11:20:13.650Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T11:20:13.650Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T11:20:13.678Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T11:20:14.518Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T11:21:07.793Z - info: [ServerMgr] Server stopped.
+2018-05-22T11:21:07.804Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T13:46:07.967Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T13:46:07.967Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T13:46:07.967Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T13:46:08.014Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T13:46:08.892Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T13:47:57.456Z - info: [ServerMgr] Server stopped.
+2018-05-22T13:47:57.464Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T13:48:02.037Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T13:48:02.037Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T13:48:02.037Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T13:48:02.068Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T13:48:02.704Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T13:49:24.065Z - info: [ServerMgr] Server stopped.
+2018-05-22T13:49:24.071Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T13:52:40.912Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T13:52:40.912Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T13:52:40.912Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T13:52:40.928Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T13:52:41.724Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	None
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega168pb Xplained mini
+	Arduino Board Value: atmel:avr:atmega168pb_xplained_mini
+	Serial Port Value: None
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T13:55:32.999Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T13:55:33.484Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T13:55:33.683Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T13:55:33.686Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T13:55:34.342Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T13:55:34.708Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T13:56:36.042Z - error: [ArdublocklySrv] Using proxy DIRECT
+2018-05-22T13:56:36.042Z - error: [ArdublocklySrv] 
+
+2018-05-22T13:56:37.152Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T13:56:37.199Z - error: [ArdublocklySrv] Using proxy DIRECT
+2018-05-22T13:56:37.199Z - error: [ArdublocklySrv] 
+
+2018-05-22T13:57:13.792Z - info: [ArdublocklySrv] 
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+Arduino Board set to:
+	Atmel atmega328p Xplained mini
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T13:58:27.992Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T13:58:28.190Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T13:58:28.218Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T13:58:28.920Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T13:58:29.281Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T13:58:44.358Z - error: [ArdublocklySrv] C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino: In function 'void loop()':
+2018-05-22T13:58:44.358Z - error: [ArdublocklySrv] 
+ArdublocklySketch:9: error: expected ';' before 'delay'
+     robot.beep(261,1000)delay(1000);
+2018-05-22T13:58:44.359Z - error: [ArdublocklySrv] 
+                         ^
+ArdublocklySketch:10: error: expected ';' before '}' token
+
+2018-05-22T13:58:44.359Z - error: [ArdublocklySrv]      robot.beep(261,1000)}
+                         ^
+
+2018-05-22T13:58:44.469Z - error: [ArdublocklySrv] exit status 1
+
+2018-05-22T13:58:44.487Z - error: [ArdublocklySrv] expected ';' before 'delay'
+
+2018-05-22T13:59:30.614Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T13:59:31.394Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T13:59:31.438Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T13:59:56.671Z - info: [ServerMgr] Server stopped.
+2018-05-22T14:00:15.580Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T14:00:15.580Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T14:00:15.580Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T14:00:15.611Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T14:00:16.357Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Settings file Serial Port is not currently available:
+	None
+Default Serial Port set:
+	COM6
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Atmel atmega328p Xplained mini
+	Arduino Board Value: atmel:avr:atmega328p_xplained_mini
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: open
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:00:50.976Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T14:00:51.176Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T14:00:51.178Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T14:00:51.852Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T14:00:52.220Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T14:01:12.064Z - info: [ArdublocklySrv] Skica uporablja 10022 bajtov, kar je (34%) prostora namenjenega programu. Maksimum je 28672 bajtov.
+2018-05-22T14:01:12.064Z - info: [ArdublocklySrv] 
+
+2018-05-22T14:01:12.064Z - info: [ArdublocklySrv] Globalna spremenljivka uporablja 1176 bajtov, kar je (45%) dinami�nega spomina in pu��a 1384 bajtov za lokalne spremenljivke. Maksimum je 2560 bajtov.
+
+2018-05-22T14:01:15.678Z - error: [ArdublocklySrv] 
+
+2018-05-22T14:01:15.694Z - error: [ArdublocklySrv] 
+
+2018-05-22T14:01:53.536Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T14:01:53.911Z - error: [ArdublocklySrv] Using proxy DIRECT
+2018-05-22T14:01:53.911Z - error: [ArdublocklySrv] 
+
+2018-05-22T14:01:53.958Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T14:04:07.555Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+Arduino Board set to:
+	Nano
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:04:22.962Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:04:54.606Z - info: [ServerMgr] Server stopped.
+2018-05-22T14:04:54.620Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T14:04:57.343Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T14:04:57.343Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T14:04:57.343Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T14:04:57.374Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T14:04:58.244Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Nano
+	Arduino Board Value: arduino:avr:nano
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: upload
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:07:44.871Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+Uploading sketch to Arduino...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --upload --port COM6 --board arduino:avr:nano C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55288)
+----------------------------------------
+
+Uploading sketch to Arduino...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --upload --port COM6 --board arduino:avr:nano C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 55291)
+----------------------------------------
+
+IDE options set to:
+	Verify sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:07:46.198Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:08:15.557Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Verify sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:08:24.872Z - info: [ServerMgr] Server stopped.
+2018-05-22T14:08:24.882Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T14:08:26.211Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T14:08:26.211Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T14:08:26.211Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T14:08:26.242Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T14:08:27.080Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Nano
+	Arduino Board Value: arduino:avr:nano
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:09:06.446Z - info: [ServerMgr] Server stopped.
+2018-05-22T14:09:06.456Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T14:09:07.942Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T14:09:07.942Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T14:09:07.942Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T14:09:07.973Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T14:09:08.784Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Nano
+	Arduino Board Value: arduino:avr:nano
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:09:17.437Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:09:18.341Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T14:09:18.580Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T14:09:18.585Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T14:09:19.417Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T14:09:20.036Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T14:09:25.091Z - info: [ArdublocklySrv] 
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+IDE options set to:
+	Verify sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:10:21.619Z - error: [ArdublocklySrv] Using proxy DIRECT
+2018-05-22T14:10:21.621Z - error: [ArdublocklySrv] 
+
+2018-05-22T14:10:22.191Z - error: [ArdublocklySrv] Using proxy DIRECT
+2018-05-22T14:10:22.191Z - error: [ArdublocklySrv] 
+
+2018-05-22T14:10:22.272Z - error: [ArdublocklySrv] Using proxy DIRECT
+
+2018-05-22T14:12:43.518Z - info: [ServerMgr] Server stopped.
+2018-05-22T14:12:46.402Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T14:12:46.402Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T14:12:46.402Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T14:12:46.449Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T14:12:47.262Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Nano
+	Arduino Board Value: arduino:avr:nano
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:17:29.395Z - info: [ServerMgr] Server stopped.
+2018-05-22T14:17:29.418Z - info: [ArdublocklySrv] Process exited with code null
+2018-05-22T14:17:58.952Z - info: [ArdublocklyElec] Starting Ardublockly version: 0.1.2
+2018-05-22T14:17:58.952Z - info: [ArdublocklyElec] Ardublockly root dir: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+2018-05-22T14:17:58.952Z - info: [ArdublocklyElec] OS detected: win32
+2018-05-22T14:17:58.999Z - info: [ServerMgr] Command: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\arduexec\server\start.exe --findprojectroot --nobrowser
+2018-05-22T14:17:59.674Z - info: [ArdublocklySrv] Running Python 3.4.4 (32 bit) on Windows-8.1-6.3.9600
+
+
+======= Parsing Command line arguments =======
+
+Parsed "--findprojectroot" flag. The ardublockly project root will be set as the server root directory.
+Parsed "--nobrowser" flag. No browser will be opened.
+
+
+======= Resolving server and project paths =======
+
+Ardublockly root directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+Selected server root: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+
+======= Loading Settings =======
+
+Settings loaded from:
+	 C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+Final settings loaded:
+	Compiler directory: C:\Program Files (x86)\Arduino\arduino_debug.exe
+	Arduino Board Key: Nano
+	Arduino Board Value: arduino:avr:nano
+	Serial Port Value: COM6
+	Sketch Name: ArdublocklySketch
+	Sketch Directory: C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+	Load IDE option: verify
+
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:18:27.542Z - info: [ArdublocklySrv] 
+
+======= Starting Server =======
+
+Setting HTTP Server Document Root to: 
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly
+
+Launching the HTTP service...
+
+Arduino Board set to:
+	Atmel atmega328pb Xplained mini
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:18:36.777Z - info: [ArdublocklySrv] 
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:18:55.848Z - info: [ArdublocklySrv] 
+Uploading sketch to Arduino...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --upload --port COM6 --board atmel:avr:atmega328pb_xplained_mini C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+Arduino output:
+DPI detection failed, fallback to 96 dpi
+
+Arduino Error output:
+Loading configuration...
+Initializing packages...
+Preparing boards...
+Napaka: atmel: Unknown package
+
+Arduino Exit code: 3
+
+Uploading sketch to Arduino...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --upload --port COM6 --board atmel:avr:atmega328pb_xplained_mini C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+Arduino output:
+DPI detection failed, fallback to 96 dpi
+
+Arduino Error output:
+Loading configuration...
+Initializing packages...
+Preparing boards...
+Napaka: atmel: Unknown package
+
+Arduino Exit code: 3
+
+IDE options set to:
+	Verify sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:23:30.730Z - info: [ArdublocklySrv] 
+Verifying the sketch...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --verify C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 56058)
+----------------------------------------
+
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:23:31.194Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T14:23:31.386Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T14:23:31.389Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T14:23:32.081Z - error: [ArdublocklySrv] Preparing boards...
+2018-05-22T14:23:32.081Z - error: [ArdublocklySrv] 
+
+2018-05-22T14:23:32.655Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T14:23:52.914Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T14:23:53.163Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T14:23:53.167Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T14:23:54.089Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T14:23:54.732Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T14:24:01.962Z - info: [ArdublocklySrv] 
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+Opening the sketch in the Arduino IDE...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+
+IDE options set to:
+	Compile and Upload sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:24:10.497Z - info: [ArdublocklySrv] 
+Uploading sketch to Arduino...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --upload --port COM6 --board atmel:avr:atmega328pb_xplained_mini C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+Arduino output:
+DPI detection failed, fallback to 96 dpi
+
+Arduino Error output:
+Loading configuration...
+Initializing packages...
+Preparing boards...
+Napaka: atmel: Unknown package
+
+Arduino Exit code: 3
+
+IDE options set to:
+	Verify sketch
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:28:38.932Z - info: [ArdublocklySrv] 
+Verifying the sketch...
+CLI command: C:\Program Files (x86)\Arduino\arduino_debug.exe --verify C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ArdublocklySketch\ArdublocklySketch.ino
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 56162)
+----------------------------------------
+
+IDE options set to:
+	Open sketch in IDE
+Settings file saved to:
+	C:\Users\Barbara\Desktop\12 24\ardublockly_v0.1.2_windows\ardublockly\ServerCompilerSettings.ini
+
+2018-05-22T14:28:39.404Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T14:28:39.604Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T14:28:39.607Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T14:28:40.296Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T14:28:40.835Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T14:29:37.688Z - info: [ArdublocklySrv] DPI detection failed, fallback to 96 dpi
+
+2018-05-22T14:29:37.878Z - error: [ArdublocklySrv] Loading configuration...
+
+2018-05-22T14:29:37.880Z - error: [ArdublocklySrv] Initializing packages...
+
+2018-05-22T14:29:38.562Z - error: [ArdublocklySrv] Preparing boards...
+
+2018-05-22T14:29:39.093Z - error: [ArdublocklySrv] Starting...
+
+2018-05-22T14:35:55.053Z - info: [ServerMgr] Server stopped.
+2018-05-22T14:35:55.061Z - info: [ArdublocklySrv] Process exited with code null
