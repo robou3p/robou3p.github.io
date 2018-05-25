@@ -312,7 +312,7 @@ void Test::accel(){
 
   int tmpX, tmpY, tmpZ = 0;
   float prag = 11.0; //nastavi prag obcutljivosti [m/s2], ki ga mora senzor preseci, da opravi test
-  int16_t error = 0; //ali je uporabnik pritisnil gumb za prekinitev
+  bool error = 0; //ali je uporabnik pritisnil gumb za prekinitev
   uint32_t tStart1;
 
   while (!robot.buttonPressed()) {
