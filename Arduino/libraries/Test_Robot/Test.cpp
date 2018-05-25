@@ -78,7 +78,7 @@ void Test::distance(){
     error = error + low[i];
   }
   if (error == 0){ //ce je vsota vseh meritev enaka 0.0 opozori uporabnika in konca test
-    Serial.println("Napaka! Meritve vseh senzorjev so enake 0.");
+    Serial.println("Napaka! Meritve vseh senzorjev so enake 0.0");
     return;
   }
   delay(5);
@@ -121,27 +121,6 @@ void Test::distance(){
       }
     }
   } while (millis() < tStart + duration1000ms * 10); //10 s traja kalibracija
-  robot.beep(200,500); //pisk za konec kalibracije
-  Serial.println("KONEC kalibracije");
-  Serial.println();
-  delay(1000);
-
-  while(!robot.buttonPressed()); //caka na uporabnika
-  delay(1000); //debouncing
-  Serial.println("START kalibracije");
-  robot.beep(200,500); //pisk za zacetek kalibracije
-  while (!robot.buttonPressed()){
-    robot.distance.readRaw();
-    for (int i = 0; i < 6; i++){
-      int sensorReading = (int)round(robot.distance.sensorsRaw[i]);
-      if (sensorReading < low[i]){
-        low[i] = sensorReading;
-      }
-      else if (sensorReading > high[i]){
-        high[i] = sensorReading;
-      }
-    }
-  }
   robot.beep(200,500); //pisk za konec kalibracije
   Serial.println("KONEC kalibracije");
   Serial.println();
