@@ -78,7 +78,7 @@ void Test::distance(){
     error = error + low[i];
   }
   if (error == 0){ //ce je vsota vseh meritev enaka 0.0 opozori uporabnika in konca test
-    Serial.println("Napaka! Meritve vseh senzorjev so enake 0.");
+    Serial.println("Napaka! Meritve vseh senzorjev so enake 0.0");
     return;
   }
   delay(5);
@@ -87,7 +87,7 @@ void Test::distance(){
   delay(500);
   //sedaj preverjas ce so se vrednosti spremenile in jih prepises ce zadostijo pogoju
   //to delas dokler uporabnik ne pritisne gumba na robotu
-  while (!robot.buttonPressed()){ //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  while (!robot.buttonPressed()){
     robot.distance.readRaw();
     for (int i = 0; i < 6; i++){
       int sensorReading = (int)round(robot.distance.sensorsRaw[i]);
@@ -103,14 +103,13 @@ void Test::distance(){
   //sedaj iscemo se najvecje vrednosti, ko so senzorji prekriti
   Serial.println("Kalibracija traja 10s. Začne in konča se s piskom.");
   Serial.println("Vsakemu senzorju moraš približati steno labirinta kolikor je mogoče!");
-  Serial.println("Pritisni funkcijski gumb za nadaljevanje.");
-  delay(1000);
+  delay(3000);
   Serial.println();
-  while(!robot.buttonPressed()); //caka na uporabnika
-  delay(1000); //debouncing
+
   Serial.println("START kalibracije");
   robot.beep(200,500); //pisk za zacetek kalibracije
-  while (!robot.buttonPressed()){
+  uint32_t tStart = millis();
+  do{
     robot.distance.readRaw();
     for (int i = 0; i < 6; i++){
       int sensorReading = (int)round(robot.distance.sensorsRaw[i]);
@@ -121,7 +120,7 @@ void Test::distance(){
         high[i] = sensorReading;
       }
     }
-  }
+  } while (millis() < tStart + duration1000ms * 10); //10 s traja kalibracija
   robot.beep(200,500); //pisk za konec kalibracije
   Serial.println("KONEC kalibracije");
   Serial.println();
